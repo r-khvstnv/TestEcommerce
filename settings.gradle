@@ -14,3 +14,11 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TestEcommerce"
 include ':app'
+include ':core-theme'
+include ':core'
+include ':core-data'
+include ':utils'
+include ':core-network'
+include ':home'
+include ':details'
+include ':cart'
