@@ -2,4 +2,6 @@
     <string name="app_name">TestEcommerce</string>
 
     <string name="label_concept">Ecommerce Concept</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_favourite">Favourite</string>
 </resources>

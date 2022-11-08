@@ -2,8 +2,13 @@
 <resources>
     <dimen name="splash_shape_size">132dp</dimen>
     <dimen name="splash_shape_margin_end">6dp</dimen>
-
     <dimen name="splash_label_text_size">30sp</dimen>
     <dimen name="splash_label_margin_start">56dp</dimen>
+
+    <dimen name="bottom_home_padding_start">10dp</dimen>
+    <dimen name="bottom_home_padding_end">5dp</dimen>
+    <dimen name="bottom_home_text_margin_start">7dp</dimen>
+    <dimen name="bottom_home_text_size">15sp</dimen>
+    <dimen name="bottom_nav_view_padding_start">8dp</dimen>
 
 </resources>
