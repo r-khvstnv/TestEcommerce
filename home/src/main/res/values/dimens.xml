@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="m_default_margin">16dp</dimen>
+
+    <dimen name="toolbar_icon_size">24dp</dimen>
+    <dimen name="toolbar_location_name_margin_horizontal">8dp</dimen>
+    <dimen name="toolbar_location_text_size">15sp</dimen>
+    <dimen name="toolbar_filter_margin_end">16dp</dimen>
+
+    <dimen name="title_text_size">25sp</dimen>
+    <dimen name="hint_expandable_text_size">15sp</dimen>
+
+    <dimen name="qr_icon_size">34dp</dimen>
+    <dimen name="qr_icon_margin_start">10dp</dimen>
+
+    <dimen name="hot_sales_frame_margin_vertical">8dp</dimen>
+
+    <dimen name="item_category_margin_vertical">8dp</dimen>
+    <dimen name="item_category_margin_end">22dp</dimen>
+    <dimen name="item_category_image_size">71dp</dimen>
+    <dimen name="item_category_text_size">12sp</dimen>
+    <dimen name="item_category_text_margin_top">7dp</dimen>
+
+    <dimen name="item_hot_offer_card_width">364dp</dimen>
+    <dimen name="item_hot_offer_card_height">182dp</dimen>
+    <dimen name="item_hot_offer_card_corner_radius">10dp</dimen>
+    <dimen name="item_hot_offer_card_margin_end">16dp</dimen>
+    <dimen name="item_hot_offer_linear_layout_margin_start">25dp</dimen>
+    <dimen name="item_hot_offer_linear_layout_width">125dp</dimen>
+    <dimen name="item_hot_offer_badge_new_size">27dp</dimen>
+    <dimen name="item_hot_offer_badge_new_margin_top">14dp</dimen>
+    <dimen name="item_hot_offer_badge_new_text_size">10sp</dimen>
+    <dimen name="item_hot_offer_brand_name_margin_top">18dp</dimen>
+    <dimen name="item_hot_offer_description_margin_top">5dp</dimen>
+    <dimen name="item_hot_offer_description_text_size">12sp</dimen>
+    <dimen name="item_hot_offer_buy_margin_top">22dp</dimen>
+    <dimen name="item_hot_offer_buy_text_size">12sp</dimen>
+    <dimen name="item_hot_offer_buy_width">100dp</dimen>
+    <dimen name="item_hot_offer_buy_height">26dp</dimen>
+
+    <dimen name="item_product_card_radius">10dp</dimen>
+    <dimen name="item_product_card_margin">7dp</dimen>
+    <dimen name="item_product_image_width">180dp</dimen>
+    <dimen name="item_product_image_height">168dp</dimen>
+    <dimen name="item_product_iv_favourite_size">25dp</dimen>
+    <dimen name="item_product_iv_favourite_margin">12dp</dimen>
+    <dimen name="item_product_iv_favourite_padding">4dp</dimen>
+    <dimen name="item_product_cost_layout_margin_top">2dp</dimen>
+    <dimen name="item_product_cost_text_size">16sp</dimen>
+    <dimen name="item_product_old_cost_text_size">12sp</dimen>
+    <dimen name="item_product_old_cost_margin_start">8dp</dimen>
+    <dimen name="item_product_name_text_size">12sp</dimen>
+    <dimen name="item_product_name_margin_top">6dp</dimen>
+    <dimen name="item_product_name_margin_bottom">16dp</dimen>
+
+
+</resources>

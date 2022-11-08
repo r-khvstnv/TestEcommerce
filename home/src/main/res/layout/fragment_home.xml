@@ -1,15 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:orientation="vertical"
+    tools:context=".HomeFragment"
+    tools:ignore="ContentDescription">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/toolbar_icon_size"
+                    android:layout_height="@dimen/toolbar_icon_size"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_pin"
+                    app:tint="?attr/colorSecondary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mock_location_name"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="@dimen/toolbar_location_text_size"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/mark_pro_medium" />
+
+                <ImageView
+                    android:layout_width="@dimen/toolbar_icon_size"
+                    android:layout_height="@dimen/toolbar_icon_size"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_chevron_down"
+                    app:tint="?attr/colorOnSurface" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_filter"
+                android:layout_width="@dimen/toolbar_icon_size"
+                android:layout_height="@dimen/toolbar_icon_size"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="@dimen/toolbar_filter_margin_end"
+                android:src="@drawable/ic_filter"
+                app:tint="?attr/colorPrimary" />
+        </FrameLayout>
+    </Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home++++++++++++++++"
-        />
+        android:layout_marginHorizontal="@dimen/m_default_margin">
 
+        <TextView
+            style="@style/TitleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:text="@string/title_select_category" />
 
-</FrameLayout>
+        <TextView
+            style="@style/HintExpandableStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="@string/hint_view_all" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m_default_margin"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_category"
+        tools:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/m_default_margin"
+        android:paddingHorizontal="@dimen/m_default_margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <SearchView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/qr_icon_size"
+            android:layout_weight="2"
+            android:searchIcon="@drawable/ic_search"
+            android:background="@drawable/shape_rectangle_corner50"
+            android:backgroundTint="?attr/colorSurface" />
+
+        <ImageView
+            android:layout_width="@dimen/qr_icon_size"
+            android:layout_height="@dimen/qr_icon_size"
+            android:layout_marginStart="@dimen/qr_icon_margin_start"
+            android:background="@drawable/shape_circle"
+            android:backgroundTint="?attr/colorSecondary"
+            android:padding="4dp"
+            android:src="@drawable/ic_scanner"
+            app:tint="?attr/colorOnSecondary" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m_default_margin"
+        android:layout_marginVertical="@dimen/hot_sales_frame_margin_vertical">
+
+        <TextView
+            style="@style/TitleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:text="@string/title_hot_sales" />
+
+        <TextView
+            style="@style/HintExpandableStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="@string/hint_see_more" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hot_sales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m_default_margin"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_hot_offer"
+        tools:orientation="horizontal" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/m_default_margin"
+        android:layout_marginVertical="@dimen/hot_sales_frame_margin_vertical">
+
+        <TextView
+            style="@style/TitleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:text="@string/title_best_seller" />
+
+        <TextView
+            style="@style/HintExpandableStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:text="@string/hint_see_more" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_best_sellers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/m_default_margin"
+        tools:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        tools:listitem="@layout/item_product" />
+</LinearLayout>

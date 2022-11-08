@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/item_product_image_width"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_product_card_margin"
+    app:cardCornerRadius="@dimen/item_product_card_radius"
+    app:strokeWidth="0dp"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_product_image"
+                android:layout_width="@dimen/item_product_image_width"
+                android:layout_height="@dimen/item_product_image_height"
+                tools:background="?attr/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/iv_product_favourite"
+                android:layout_width="@dimen/item_product_iv_favourite_size"
+                android:layout_height="@dimen/item_product_iv_favourite_size"
+                android:layout_gravity="end|top"
+                android:layout_margin="@dimen/item_product_iv_favourite_margin"
+                android:background="@drawable/shape_circle"
+                android:backgroundTint="?attr/colorOnSecondary"
+                android:padding="@dimen/item_product_iv_favourite_padding"
+                android:src="@drawable/ic_favourite"
+                app:tint="?attr/colorSecondary" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_product_cost_layout_margin_top"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_product_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/item_product_cost_text_size"
+                app:fontFamily="@font/mark_pro_bold"
+                tools:text="$1,047" />
+
+            <TextView
+                android:id="@+id/tv_product_old_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/item_product_old_cost_margin_start"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="@dimen/item_product_old_cost_text_size"
+                app:fontFamily="@font/mark_pro_medium"
+                tools:text="$1,500" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_product_name_margin_top"
+            android:layout_marginBottom="@dimen/item_product_name_margin_bottom"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/item_product_name_text_size"
+            app:fontFamily="@font/mark_pro_medium"
+            tools:text="Samsung Galaxy s20 Ultra" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

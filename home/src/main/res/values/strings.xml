@@ -1,3 +1,11 @@
 <resources>
     <string name="label_explorer">Explorer</string>
+    <string name="mock_location_name">Zihuatanejo, Gro</string>
+    <string name="title_select_category">Select category</string>
+    <string name="title_hot_sales">Hot Sales</string>
+    <string name="title_best_seller">Best Seller</string>
+    <string name="hint_view_all">view all</string>
+    <string name="hint_see_more">see more</string>
+    <string name="badge_hint_new">New</string>
+    <string name="action_buy_now">Buy now!</string>
 </resources>

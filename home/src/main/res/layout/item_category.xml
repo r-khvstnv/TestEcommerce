@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/item_category_margin_vertical"
+    android:layout_marginEnd="@dimen/item_category_margin_end"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/item_category_image_size"
+        android:layout_height="@dimen/item_category_image_size"
+        android:background="@drawable/shape_circle"
+        android:scaleType="center"
+        tools:backgroundTint="?attr/colorSecondary"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_category_text_margin_top"
+        android:fontFamily="@font/mark_pro_medium"
+        android:textSize="@dimen/item_category_text_size"
+        tools:text="Phones"
+        tools:textColor="?attr/colorSecondary" />
+
+</LinearLayout>

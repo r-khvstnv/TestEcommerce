@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/item_hot_offer_card_width"
+    android:layout_height="@dimen/item_hot_offer_card_height"
+    android:layout_marginEnd="@dimen/item_hot_offer_card_margin_end"
+    app:cardCornerRadius="@dimen/item_hot_offer_card_corner_radius"
+    app:strokeWidth="0dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_hot_offer_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="?attr/colorPrimary"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="@dimen/item_hot_offer_linear_layout_width"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/item_hot_offer_linear_layout_margin_start"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_badge_new"
+                android:layout_width="@dimen/item_hot_offer_badge_new_size"
+                android:layout_height="@dimen/item_hot_offer_badge_new_size"
+                android:layout_marginTop="@dimen/item_hot_offer_badge_new_margin_top"
+                android:background="@drawable/shape_circle"
+                android:backgroundTint="?attr/colorSecondary"
+                android:gravity="center"
+                android:text="@string/badge_hint_new"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="@dimen/item_hot_offer_badge_new_text_size"
+                android:visibility="gone"
+                app:fontFamily="@font/mark_pro_bold"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_hot_offer_brand_name"
+                style="@style/TitleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_hot_offer_brand_name_margin_top"
+                android:maxLines="1"
+                android:textColor="?attr/colorOnPrimary"
+                tools:text="Iphone 12" />
+
+            <TextView
+                android:id="@+id/tv_hot_offer_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_hot_offer_description_margin_top"
+                android:maxLines="1"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="@dimen/item_hot_offer_description_text_size"
+                app:fontFamily="@font/mark_pro_regular"
+                tools:text="Super. Mega. Rapid" />
+
+            <TextView
+                android:id="@+id/tv_hot_offer_buy"
+                android:layout_width="@dimen/item_hot_offer_buy_width"
+                android:layout_height="@dimen/item_hot_offer_buy_height"
+                android:layout_marginTop="@dimen/item_hot_offer_buy_margin_top"
+                android:background="@drawable/shape_rectangle_corner5"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:gravity="center"
+                android:text="@string/action_buy_now"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/item_hot_offer_buy_text_size"
+                app:fontFamily="@font/mark_pro_bold" />
+        </LinearLayout>
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>
