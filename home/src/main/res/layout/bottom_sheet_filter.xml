@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sheet_filter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/filter_layout_margin_bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/m_default_margin">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageButton
+                android:id="@+id/ib_close"
+                style="@style/MyTopAppBarComponent.Button.Back"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_close"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                style="@style/MyTopAppBarComponent.TextView.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_filter_options" />
+
+            <Button
+                android:id="@+id/ib_done"
+                style="@style/MyTopAppBarComponent.Button.Action"
+                android:layout_gravity="end|center_vertical"
+                android:text="@string/action_done" />
+        </FrameLayout>
+
+
+        <TextView
+            style="@style/FilterTitleTextStyle"
+            android:text="@string/title_brand" />
+
+        <Spinner
+            android:id="@+id/spinner_brand"
+            style="@style/FilterSpinnerStyle" />
+
+        <TextView
+            style="@style/FilterTitleTextStyle"
+            android:text="@string/title_price" />
+
+        <Spinner
+            android:id="@+id/spinner_price"
+            style="@style/FilterSpinnerStyle" />
+
+        <TextView
+            style="@style/FilterTitleTextStyle"
+            android:text="@string/title_size" />
+
+        <Spinner
+            android:id="@+id/spinner_size"
+            style="@style/FilterSpinnerStyle" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

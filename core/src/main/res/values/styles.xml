@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTopAppBarComponent"/>
+
+    <style name="MyTopAppBarComponent.Button">
+        <item name="android:layout_height">@dimen/top_app_bar_button_height</item>
+        <item name="android:background">@drawable/shape_rectangle_corner10</item>
+    </style>
+
+    <style name="MyTopAppBarComponent.Button.Back">
+        <item name="android:layout_width">@dimen/top_app_bar_button_height</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="tint">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="MyTopAppBarComponent.Button.Action">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/top_app_bar_button_height</item>
+        <item name="backgroundTint">?attr/colorSecondary</item>
+        <item name="tint">?attr/colorOnSecondary</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="android:textSize">@dimen/top_app_bar_button_text_size</item>
+        <item name="fontFamily">@font/mark_pro_medium</item>
+    </style>
+
+    <style name="MyTopAppBarComponent.TextView">
+        <item name="fontFamily">@font/mark_pro_medium</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="MyTopAppBarComponent.TextView.Title">
+        <item name="android:textSize">@dimen/top_app_bar_title_text_size</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="MyTopAppBarComponent.TextView.Subtitle">
+        <item name="android:textSize">@dimen/top_app_bar_subtitle_text_size</item>
+    </style>
+</resources>
