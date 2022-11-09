@@ -93,17 +93,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/m_default_margin"
-        android:paddingHorizontal="@dimen/m_default_margin"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/m_default_margin">
 
         <SearchView
             android:layout_width="0dp"
             android:layout_height="@dimen/qr_icon_size"
             android:layout_weight="2"
-            android:searchIcon="@drawable/ic_search"
             android:background="@drawable/shape_rectangle_corner50"
-            android:backgroundTint="?attr/colorSurface" />
+            android:backgroundTint="?attr/colorSurface"
+            android:searchIcon="@drawable/ic_search" />
 
         <ImageView
             android:layout_width="@dimen/qr_icon_size"
