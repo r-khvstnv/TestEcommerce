@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="TabItemTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">@dimen/tab_item_text_size</item>
+        <item name="fontFamily">@font/mark_pro_bold</item>
+        <item name="android:fontFamily">@font/mark_pro_bold</item>
+    </style>
+
+    <style name="ShopTabStyle" />
+
+    <style name="ShopTabStyle.ImageView">
+        <item name="android:layout_width">@dimen/shop_element_image_size</item>
+        <item name="android:layout_height">@dimen/shop_element_image_size</item>
+        <item name="android:layout_weight">1</item>
+        <item name="tint">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="ShopTabStyle.TextView">
+        <item name="android:textSize">@dimen/shop_element_text_size</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/mark_pro_regular</item>
+    </style>
+
+    <style name="ShopTabStyle.TextView.AddToCart">
+        <item name="android:textSize">@dimen/shop_btn_buy_text_size</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/mark_pro_bold</item>
+        <item name="android:paddingVertical" tools:ignore="NewApi">@dimen/shop_btn_buy_text_padding_vertical</item>
+    </style>
+
+
+    <style name="MyCheckBoxStyle" parent="Widget.Material3.CompoundButton.RadioButton"/>
+
+    <style name="MyCheckBoxStyle.Button"  >
+        <item name="android:button">@drawable/check_box_button_states</item>
+        <item name="buttonTint">?android:colorBackground</item>
+        <item name="android:background">@drawable/shape_circle</item>
+        <item name="android:layout_width">@dimen/shop_rb_height</item>
+        <item name="android:layout_height">@dimen/shop_rb_height</item>
+    </style>
+
+    <style name="MyCheckBoxStyle.Text" >
+        <item name="android:background">@drawable/shape_rectangle_corner10</item>
+        <item name="android:button">@null</item>
+        <item name="android:backgroundTint">@drawable/check_box_background_states</item>
+        <item name="android:textColor">@drawable/check_box_text_states</item>
+        <item name="android:textSize">@dimen/shop_ch_b_text_size</item>
+        <item name="fontFamily">@font/mark_pro_bold</item>
+        <item name="android:layout_height">@dimen/shop_rb_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingHorizontal" tools:ignore="NewApi">@dimen/shop_ch_b_text_padding_horizontal</item>
+    </style>
+</resources>

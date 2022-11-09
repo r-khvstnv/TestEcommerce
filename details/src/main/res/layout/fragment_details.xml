@@ -1,9 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsFragment">
+    android:orientation="vertical"
+    tools:context=".DetailsFragment"
+    tools:ignore="ContentDescription">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="@dimen/m_default_layout_margin">
+
+            <ImageButton
+                android:id="@+id/ib_details_back"
+                style="@style/MyTopAppBarComponent.Button.Back"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_chevron_left" />
+
+            <TextView
+                style="@style/MyTopAppBarComponent.TextView.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_product_details" />
+
+            <ImageButton
+                android:id="@+id/ib_details_cart"
+                style="@style/MyTopAppBarComponent.Button.Action"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_cart" />
+        </FrameLayout>
 
 
-</FrameLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_product_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/m_default_layout_margin"
+            tools:background="?attr/colorPrimary"
+            tools:minHeight="@dimen/item_product_preview_card_height" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/details_card_margin_vertical"
+            android:background="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/details_card_radius"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/details_card_padding_horizontal"
+                android:paddingTop="@dimen/details_card_padding_top"
+                android:paddingBottom="@dimen/details_card_padding_bottom">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:id="@+id/tv_details_product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="@dimen/details_product_name_text_size"
+                        app:fontFamily="@font/mark_pro_medium"
+                        tools:text="Galaxy Note 20 Ultra" />
+
+                    <ImageButton
+                        android:id="@+id/ib_details_favourite"
+                        android:layout_width="@dimen/details_product_btn_favourite_width"
+                        android:layout_height="@dimen/details_product_btn_favourite_height"
+                        android:layout_gravity="end"
+                        android:background="@drawable/shape_rectangle_corner10"
+                        android:backgroundTint="?attr/colorPrimary"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_favourite"
+                        app:tint="?attr/colorOnPrimary" />
+                </FrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_details_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rating"
+                    tools:orientation="horizontal" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/_tab_product_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="?attr/colorSecondary"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabTextAppearance="@style/TabItemTextStyle">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_shop" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_details" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_features" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_shop"
+                    />
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

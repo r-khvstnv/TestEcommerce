@@ -1,3 +1,8 @@
 <resources>
     <string name="label_details">Details</string>
+    <string name="label_product_details">Product Details</string>
+    <string name="label_shop">Shop</string>
+    <string name="label_features">Features</string>
+    <string name="title_select_color_and_capacity">Select color and capacity</string>
+    <string name="action_add_to_cart">Add to Cart</string>
 </resources>

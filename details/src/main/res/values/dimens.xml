@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_product_preview_card_radius">20dp</dimen>
+    <dimen name="item_product_preview_card_width">266dp</dimen>
+    <dimen name="item_product_preview_card_height">335dp</dimen>
+
+    <dimen name="details_card_radius">30dp</dimen>
+    <dimen name="details_card_margin_vertical">8dp</dimen>
+    <dimen name="details_card_padding_horizontal">30dp</dimen>
+    <dimen name="details_card_padding_top">28dp</dimen>
+    <dimen name="details_card_padding_bottom">60dp</dimen>
+
+    <dimen name="details_product_name_text_size">24sp</dimen>
+    <dimen name="details_product_btn_favourite_width">37dp</dimen>
+    <dimen name="details_product_btn_favourite_height">34dp</dimen>
+
+    <dimen name="item_star_size">24dp</dimen>
+    <dimen name="tab_item_text_size">20sp</dimen>
+
+    <dimen name="shop_layout_margin_top">24dp</dimen>
+    <dimen name="shop_element_image_size">36dp</dimen>
+    <dimen name="shop_element_text_size">12sp</dimen>
+    <dimen name="shop_equipment_title_text_size">16sp</dimen>
+    <dimen name="shop_equipment_title_margin_top">28dp</dimen>
+
+    <!--NOTE: While the radio box size is changed, the button margin MUST BE changed too.
+        margin_left controls button position at center. This method is used,
+        due to RadioButton does not provide any native methods to realise it.-->
+    <dimen name="shop_rb_height">40dp</dimen>
+    <dimen name="shop_rb_button_margin_left">7dp</dimen> <!--Implemented in ic_tick_right_shifted.xml-->
+
+    <dimen name="shop_rb_margin_horizontal">14dp</dimen>
+    <dimen name="shop_ch_b_text_size">12sp</dimen>
+    <dimen name="shop_ch_b_text_padding_horizontal">15dp</dimen>
+
+    <dimen name="shop_btn_buy_margin_top">26dp</dimen>
+    <dimen name="shop_btn_buy_text_size">20dp</dimen>
+    <dimen name="shop_btn_buy_text_padding_vertical">14dp</dimen>
+</resources>
