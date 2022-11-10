@@ -21,7 +21,6 @@
             <ImageButton
                 android:id="@+id/ib_details_back"
                 style="@style/MyTopAppBarComponent.Button.Back"
-                android:layout_gravity="start|center_vertical"
                 android:src="@drawable/ic_chevron_left" />
 
             <TextView
@@ -33,7 +32,6 @@
             <ImageButton
                 android:id="@+id/ib_details_cart"
                 style="@style/MyTopAppBarComponent.Button.Action"
-                android:layout_gravity="end|center_vertical"
                 android:src="@drawable/ic_cart" />
         </FrameLayout>
 

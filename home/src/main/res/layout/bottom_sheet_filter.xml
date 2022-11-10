@@ -21,7 +21,6 @@
             <ImageButton
                 android:id="@+id/ib_close"
                 style="@style/MyTopAppBarComponent.Button.Back"
-                android:layout_gravity="start|center_vertical"
                 android:src="@drawable/ic_close"
                 tools:ignore="ContentDescription" />
 
@@ -34,7 +33,6 @@
             <Button
                 android:id="@+id/ib_done"
                 style="@style/MyTopAppBarComponent.Button.Action"
-                android:layout_gravity="end|center_vertical"
                 android:text="@string/action_done" />
         </FrameLayout>
 

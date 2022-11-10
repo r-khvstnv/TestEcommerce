@@ -36,7 +36,6 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":core-data"))
-    implementation(project(":core-theme"))
     implementation(project(":utils"))
 
     def nav_ver = '2.5.2'
