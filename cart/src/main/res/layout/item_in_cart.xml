@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/item_in_cart_margin_vertical"
+    android:orientation="horizontal"
+    tools:background="?attr/colorPrimary"
+    tools:ignore="ContentDescription">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/item_in_cart_product_image_size"
+        android:layout_height="@dimen/item_in_cart_product_image_size"
+        android:backgroundTint="?attr/colorOnPrimary"
+        app:cardCornerRadius="@dimen/item_in_cart_product_image_card_radius"
+        app:strokeWidth="0dp">
+
+        <ImageView
+            android:id="@+id/iv_item_in_cart_product_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="?attr/colorSecondary" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/item_in_cart_text_layout_margin_horizontal"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item_in_cart_product_name"
+            style="@style/MyCartStyle.ItemTextView.Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Galaxy Note 20 Ultra" />
+
+        <TextView
+            android:id="@+id/tv_item_in_cart_product_cost"
+            style="@style/MyCartStyle.ItemTextView.Cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="$3000.00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/item_in_cart_amount_layout_margin_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rectangle_corner26"
+            android:backgroundTint="?attr/colorTertiary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_item_in_cart_decrease"
+                style="@style/MyCartStyle.AmountImageView"
+                android:src="@drawable/ic_minus" />
+
+            <TextView
+                style="@style/MyCartStyle.ItemTextView.Name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                tools:text="2" />
+
+            <ImageView
+                android:id="@+id/iv_item_in_cart_increase"
+                style="@style/MyCartStyle.AmountImageView"
+                android:src="@drawable/ic_plus" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_item_in_cart_delete"
+            android:layout_width="@dimen/item_in_cart_icon_size"
+            android:layout_height="@dimen/item_in_cart_icon_size"
+            android:layout_margin="@dimen/item_in_cart_icon_delete_margin"
+            android:src="@drawable/ic_delete"
+            app:tint="?attr/colorTertiary" />
+
+    </LinearLayout>
+
+</LinearLayout>

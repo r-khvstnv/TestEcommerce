@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MyCartStyle"/>
+
+    <style name="MyCartStyle.ItemTextView">
+        <item name="android:textSize">@dimen/item_in_cart_text_size</item>
+        <item name="fontFamily">@font/mark_pro_medium</item>
+    </style>
+
+    <style name="MyCartStyle.ItemTextView.Name">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:lines">2</item>
+    </style>
+
+    <style name="MyCartStyle.ItemTextView.Cost">
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="MyCartStyle.AmountImageView">
+        <item name="android:layout_width">@dimen/item_in_cart_icon_size</item>
+        <item name="android:layout_height">@dimen/item_in_cart_icon_size</item>
+        <item name="tint">?attr/colorOnTertiary</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/custom_ripple</item>
+    </style>
+
+    <style name="MyCartStyle.TotalLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal" tools:ignore="NewApi">@dimen/m_default_layout_margin</item>
+        <item name="android:layout_marginTop">@dimen/cart_total_layout_margin_top</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="MyCartStyle.TotalTextView">
+        <item name="android:textSize">@dimen/cart_total_text_size</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MyCartStyle.TotalTextView.Title">
+        <item name="fontFamily">@font/mark_pro_regular</item>
+        <item name="android:layout_weight">3</item>
+    </style>
+    <style name="MyCartStyle.TotalTextView.Value">
+        <item name="fontFamily">@font/mark_pro_bold</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+</resources>

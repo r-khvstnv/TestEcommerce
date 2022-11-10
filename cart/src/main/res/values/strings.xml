@@ -1,3 +1,9 @@
 <resources>
     <string name="label_cart">Cart</string>
+    <string name="subtitle_add_address">Add address</string>
+    <string name="title_my_cart">My Cart</string>
+    <string name="title_total">Total</string>
+    <string name="title_delivery">Delivery</string>
+    <string name="mock_free">Free</string>
+    <string name="action_checkout">Checkout</string>
 </resources>

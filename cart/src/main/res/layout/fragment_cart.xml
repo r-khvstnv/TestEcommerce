@@ -1,8 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartFragment">
+    android:orientation="vertical"
+    tools:context=".CartFragment"
+    tools:ignore="ContentDescription">
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="@dimen/m_default_layout_margin">
+
+            <ImageButton
+                android:id="@+id/ib_cart_back"
+                style="@style/MyTopAppBarComponent.Button.Back"
+                android:src="@drawable/ic_chevron_left" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|end"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/MyTopAppBarComponent.TextView.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/top_app_bar_location_subtitle_margin_end"
+                    android:text="@string/subtitle_add_address" />
+
+                <ImageButton
+                    android:id="@+id/ib_cart_location"
+                    style="@style/MyTopAppBarComponent.Button.Action"
+                    android:src="@drawable/ic_pin" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/m_default_layout_margin"
+            android:layout_marginTop="@dimen/cart_title_margin_top"
+            android:text="@string/title_my_cart"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/cart_title_text_size"
+            app:fontFamily="@font/mark_pro_bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/cart_checkout_layout_margin_top"
+            android:background="@drawable/shape_rectangle_top_corners30"
+            android:backgroundTint="?attr/colorPrimary"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/cart_checkout_layout_padding_top">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/m_default_layout_margin"
+                android:minHeight="@dimen/cart_rv_products_in_cart_min_height"
+                tools:itemCount="2"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_in_cart"
+                tools:orientation="vertical" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:colorBackground" />
+
+            <LinearLayout style="@style/MyCartStyle.TotalLayout">
+
+                <TextView
+                    style="@style/MyCartStyle.TotalTextView.Title"
+                    android:text="@string/title_total" />
+
+                <TextView
+                    android:id="@+id/tv_cart_total_value"
+                    style="@style/MyCartStyle.TotalTextView.Value"
+                    tools:text="$6,000 us" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/MyCartStyle.TotalLayout">
+
+                <TextView
+                    style="@style/MyCartStyle.TotalTextView.Title"
+                    android:text="@string/title_delivery" />
+
+                <TextView
+                    android:id="@+id/tv_cart_delivery_value"
+                    style="@style/MyCartStyle.TotalTextView.Value"
+                    android:text="@string/mock_free" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginVertical="20dp"
+                android:background="?android:colorBackground" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cart_checkout_height"
+                android:layout_marginStart="@dimen/cart_checkout_margin"
+                android:layout_marginEnd="@dimen/cart_checkout_margin"
+                android:layout_marginBottom="@dimen/cart_checkout_margin"
+                android:background="@drawable/shape_rectangle_corner10"
+                android:text="@string/action_checkout"
+                android:textSize="@dimen/cart_checkout_text_size"
+                app:backgroundTint="?attr/colorSecondary"
+                app:fontFamily="@font/mark_pro_bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
