@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -38,7 +39,6 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":core-data"))
-    implementation(project(":core-theme"))
     implementation(project(":utils"))
 
     implementation(project(":cart"))
@@ -47,6 +47,8 @@ dependencies {
 
     def nav_ver = '2.5.2'
     def lifecycle_ver = '2.5.1'
+    def dagger2_ver = '2.44.2'
+    def retrofit2_ver = '2.9.0'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -59,4 +61,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //dagger2
+    implementation ("com.google.dagger:dagger:$dagger2_ver")
+    implementation ("com.google.dagger:dagger-android-support:$dagger2_ver")
+    kapt ("com.google.dagger:dagger-compiler:$dagger2_ver")
+    kapt ("com.google.dagger:dagger-android-processor:$dagger2_ver")
+    //retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_ver"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_ver"
 }
