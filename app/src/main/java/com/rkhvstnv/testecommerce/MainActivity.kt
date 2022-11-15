@@ -2,6 +2,7 @@ package com.rkhvstnv.testecommerce
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
@@ -44,5 +45,22 @@ class MainActivity : AppCompatActivity() {
         binding.mHome.setOnClickListener {
             navController.navigate(com.rkhvstnv.testecommerce.home.R.id.navigation_home)
         }
+
+        navController.addOnDestinationChangedListener{
+            _, destination, _ ->
+            when(destination.id){
+                com.rkhvstnv.testecommerce.details.R.id.detailsFragment -> hideNavView()
+                com.rkhvstnv.testecommerce.cart.R.id.cartFragment -> hideNavView()
+                else -> showNavView()
+            }
+        }
+    }
+
+    private fun showNavView(){
+        binding.bottomViewLayout.visibility = View.VISIBLE
+    }
+
+    private fun hideNavView(){
+        binding.bottomViewLayout.visibility = View.GONE
     }
 }

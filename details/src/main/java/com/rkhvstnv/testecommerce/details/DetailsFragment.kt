@@ -1,10 +1,12 @@
 package com.rkhvstnv.testecommerce.details
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.rkhvstnv.testecommerce.details.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {
@@ -24,6 +26,14 @@ class DetailsFragment : Fragment() {
 
         val adapter = DetailsTabPagerAdapter(this, 3)
         binding.viewPagerTabs.adapter = adapter
+
+        binding.ibDetailsCart.setOnClickListener { navigateToCart() }
+    }
+
+
+    private fun navigateToCart(){
+        val uri = Uri.parse(getString(com.rkhvstnv.testecommerce.core.R.string.deep_link_cart_url))
+        findNavController().navigate(uri)
     }
 
 

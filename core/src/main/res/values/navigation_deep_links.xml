@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="deep_link_cart_url">android-app://com.rkhvstnv.testecommerce.app/cartFragment</string>
+
+    <string name="deep_link_details_base">android-app://com.rkhvstnv.testecommerce.app/detailsFragment/</string>
+    <string name="deep_link_details_argument_name">productId</string>
+    <string name="deep_link_details_url">android-app://com.rkhvstnv.testecommerce.app/detailsFragment/{productId}</string>
+</resources>

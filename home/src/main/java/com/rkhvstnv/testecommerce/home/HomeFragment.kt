@@ -1,20 +1,45 @@
 package com.rkhvstnv.testecommerce.home
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.rkhvstnv.testecommerce.home.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.ivFilter.setOnClickListener {
+            navigateToDetails(id = 7)
+        }
+    }
+
+
+    private fun navigateToDetails(id: Int){
+        val link = getString(com.rkhvstnv.testecommerce.core.R.string.deep_link_details_base)
+        val uri = Uri.parse(link + id)
+        findNavController().navigate(uri)
+    }
+
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
     }
 
 }
