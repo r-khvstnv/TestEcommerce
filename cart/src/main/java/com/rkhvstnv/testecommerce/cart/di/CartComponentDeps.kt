@@ -2,6 +2,8 @@ package com.rkhvstnv.testecommerce.cart.di
 
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.ViewModel
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.AddToCartUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetAllProductsInCartUseCase
 import kotlin.properties.Delegates
 
 /**
@@ -18,6 +20,8 @@ import kotlin.properties.Delegates
  * Note: Should be inherited in AppComponent
  * */
 interface CartComponentDeps {
+    val addToCartUseCase: AddToCartUseCase
+    val getAllProductsInCartUseCase: GetAllProductsInCartUseCase
 }
 /**
  * Interface provides required instances from appComponent

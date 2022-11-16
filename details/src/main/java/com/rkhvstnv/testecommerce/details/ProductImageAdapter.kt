@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rkhvstnv.testecommerce.details.databinding.ItemProductPreviewBinding
 import com.rkhvstnv.testecommerce.utils.loadImage
 
-class ProductImageAdapter(
+internal class ProductImageAdapter(
     private val context: Context
 ): ListAdapter<String, ProductImageAdapter.ViewHolder>(ProductImageDiff()) {
     class ViewHolder(val binding: ItemProductPreviewBinding): RecyclerView.ViewHolder(binding.root)

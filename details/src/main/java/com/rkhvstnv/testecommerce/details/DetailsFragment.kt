@@ -59,10 +59,7 @@ internal class DetailsFragment : Fragment() {
         val adapter = DetailsTabPagerAdapter(this, 3)
         binding.viewPagerTabs.adapter = adapter
 
-        binding.ibDetailsCart.setOnClickListener { navigateToCart() }
-        binding.ibDetailsBack.setOnClickListener { findNavController().popBackStack() }
-
-        viewModel.phone.observe(viewLifecycleOwner){
+        viewModel.phoneResult.observe(viewLifecycleOwner){
             result ->
             when(result){
                 is MyResult.Error -> {
@@ -89,6 +86,10 @@ internal class DetailsFragment : Fragment() {
                 }
             }
         }
+
+
+        binding.ibDetailsCart.setOnClickListener { navigateToCart() }
+        binding.ibDetailsBack.setOnClickListener { findNavController().popBackStack() }
     }
 
 

@@ -1,5 +1,7 @@
 package com.rkhvstnv.testecommerce.core_data.di
 
+import android.app.Application
+import com.rkhvstnv.testecommerce.core_data.data.database.MockDatabase
 import com.rkhvstnv.testecommerce.core_data.data.network.MockyService
 import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
 import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
@@ -26,5 +28,8 @@ internal class SourceModule {
     fun providesRemoteSource(mockyService: MockyService): RemoteSource = RemoteSource(service = mockyService)
 
     @[Provides Singleton]
-    fun providesLocalSource(): LocalSource = LocalSource()
+    fun providesMockDatabase(application: Application): MockDatabase = MockDatabase(context = application.applicationContext)
+
+    @[Provides Singleton]
+    fun providesLocalSource(mockDatabase: MockDatabase): LocalSource = LocalSource(mockDatabase)
 }

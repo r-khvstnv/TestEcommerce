@@ -2,6 +2,7 @@ package com.rkhvstnv.testecommerce.details.di
 
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.ViewModel
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.AddToCartUseCase
 import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetPhoneByIdUseCase
 import kotlin.properties.Delegates
 
@@ -20,6 +21,7 @@ import kotlin.properties.Delegates
  * */
 interface DetailsComponentDeps {
     val getPhoneByIdUseCase: GetPhoneByIdUseCase
+    val addToCartUseCase: AddToCartUseCase
 }
 /**
  * Interface provides required instances from appComponent

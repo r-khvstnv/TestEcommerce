@@ -2,7 +2,6 @@ package com.rkhvstnv.testecommerce.details
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -47,7 +46,7 @@ internal class ShopFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        viewModel.phone.observe(viewLifecycleOwner){
+        viewModel.phoneResult.observe(viewLifecycleOwner){
             result ->
             if (result is MyResult.Success){
                 with(binding){
@@ -72,6 +71,8 @@ internal class ShopFragment : Fragment() {
                 }
             }
         }
+
+        binding.llShopBuy.setOnClickListener { viewModel.addPhoneToCart() }
 
     }
 

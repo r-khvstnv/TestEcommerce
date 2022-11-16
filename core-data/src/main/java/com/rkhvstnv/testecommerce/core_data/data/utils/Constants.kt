@@ -5,3 +5,8 @@ internal object NetworkConst{
     const val POJO_ENDPOINT = "654bd15e-b121-49ba-a588-960956b15175"
     const val MOCK_PRODUCT_ENDPOINT = "6c14c560-15c6-4248-b9d2-b4508df7d4f5"
 }
+
+internal object DatabaseConstants{
+    const val APP_SHARED_PREF = "testEcommerceSharedPref"
+    const val PRODUCTS_IN_CART_KEY = "productsInCart"
+}

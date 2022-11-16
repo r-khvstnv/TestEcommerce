@@ -9,7 +9,7 @@ import com.rkhvstnv.testecommerce.home.di.HomeComponentDepsStore
 
 class TestEcommerceApp: Application() {
     val appComponent: AppComponent by lazy {
-        DaggerAppComponent.builder().build()
+        DaggerAppComponent.builder().application(this).build()
     }
     override fun onCreate() {
         super.onCreate()

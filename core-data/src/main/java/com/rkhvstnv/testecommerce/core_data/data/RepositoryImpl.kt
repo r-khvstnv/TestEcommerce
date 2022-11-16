@@ -1,5 +1,7 @@
 package com.rkhvstnv.testecommerce.core_data.data
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
 import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
 import com.rkhvstnv.testecommerce.core_data.data.utils.PhoneDtoResultToPhoneResultMapper
@@ -11,7 +13,7 @@ import com.rkhvstnv.testecommerce.core_data.domain.Repository
 import com.rkhvstnv.testecommerce.core_data.domain.model.BestSellerProduct
 import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
 import com.rkhvstnv.testecommerce.core_data.domain.model.Phone
-import com.rkhvstnv.testecommerce.core_data.domain.model.Product
+import com.rkhvstnv.testecommerce.core_data.domain.model.ProductInCartDto
 import javax.inject.Inject
 
 internal class RepositoryImpl @Inject constructor(
@@ -28,9 +30,21 @@ internal class RepositoryImpl @Inject constructor(
     override suspend fun getBestSellers(): MyResult<List<BestSellerProduct>> =  handleApi {
         remoteSource.getPojo() }.let(pojoNetworkResultToBestSellerProductListResultMapper::map)
 
-    override suspend fun getProductsInCart(): List<Product> = listOf(Product(1,1))
-
     /*For test purpose, every time, will be returned the same mock data.*/
     override suspend fun getPhoneById(id: Int): MyResult<Phone> = handleApi {
         remoteSource.getPhone() }.let(phoneDtoResultToPhoneResultMapper::map)
+
+    override fun getProductsInCart(): MyResult<List<ProductInCartDto>> {
+        val json = localSource.getAllProductsInCart()
+        return if (json.isEmpty()){
+            MyResult.Error(0, "No data")
+        } else{
+            val itemType = object : TypeToken<List<ProductInCartDto>>(){}.type
+            MyResult.Success(data = Gson().fromJson(json, itemType))
+        }
+    }
+
+    override fun insertAllProductsInCart(list: List<ProductInCartDto>) {
+        localSource.insertAllProductInCart(json = Gson().toJson(list))
+    }
 }
