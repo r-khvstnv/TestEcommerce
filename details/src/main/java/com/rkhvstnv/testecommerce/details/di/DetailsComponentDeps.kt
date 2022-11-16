@@ -2,6 +2,7 @@ package com.rkhvstnv.testecommerce.details.di
 
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.ViewModel
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetPhoneByIdUseCase
 import kotlin.properties.Delegates
 
 /**
@@ -18,6 +19,7 @@ import kotlin.properties.Delegates
  * Note: Should be inherited in AppComponent
  * */
 interface DetailsComponentDeps {
+    val getPhoneByIdUseCase: GetPhoneByIdUseCase
 }
 /**
  * Interface provides required instances from appComponent

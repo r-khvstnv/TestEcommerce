@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="item_product_preview_card_radius">20dp</dimen>
-    <dimen name="item_product_preview_card_width">266dp</dimen>
     <dimen name="item_product_preview_card_height">335dp</dimen>
+    <dimen name="item_product_preview_padding_horizontal">60dp</dimen>
+    <dimen name="item_product_preview_image_margin">10dp</dimen>
 
     <dimen name="details_card_radius">30dp</dimen>
     <dimen name="details_card_margin_vertical">8dp</dimen>
@@ -14,7 +15,6 @@
     <dimen name="details_product_btn_favourite_width">37dp</dimen>
     <dimen name="details_product_btn_favourite_height">34dp</dimen>
 
-    <dimen name="item_star_size">24dp</dimen>
     <dimen name="tab_item_text_size">20sp</dimen>
 
     <dimen name="shop_layout_margin_top">24dp</dimen>
@@ -22,6 +22,7 @@
     <dimen name="shop_element_text_size">12sp</dimen>
     <dimen name="shop_equipment_title_text_size">16sp</dimen>
     <dimen name="shop_equipment_title_margin_top">28dp</dimen>
+    <dimen name="shop_equipment_title_margin_bottom">8dp</dimen>
 
     <!--NOTE: While the radio box size is changed, the button margin MUST BE changed too.
         margin_left controls button position at center. This method is used,

@@ -39,10 +39,9 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_product_images"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/m_default_layout_margin"
-            tools:background="?attr/colorPrimary"
-            tools:minHeight="@dimen/item_product_preview_card_height" />
+            android:layout_height="@dimen/item_product_preview_card_height"
+            android:paddingHorizontal="@dimen/item_product_preview_padding_horizontal"
+            tools:background="?attr/colorPrimary" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -86,13 +85,18 @@
                         app:tint="?attr/colorOnPrimary" />
                 </FrameLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_details_rating"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rating"
-                    tools:orientation="horizontal" />
+                <RatingBar
+                    android:id="@+id/rb_product_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:numStars="5"
+                    android:progressTint="@color/color_rating"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    tools:rating="3.5" />
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/_tab_product_details"
@@ -122,8 +126,7 @@
                     android:id="@+id/view_pager_tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_shop"
-                    />
+                    tools:layout="@layout/fragment_shop" />
 
 
             </LinearLayout>

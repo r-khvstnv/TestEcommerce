@@ -5,4 +5,5 @@
     <string name="label_features">Features</string>
     <string name="title_select_color_and_capacity">Select color and capacity</string>
     <string name="action_add_to_cart">Add to Cart</string>
+    <string name="size_gb">GB</string>
 </resources>

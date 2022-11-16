@@ -17,4 +17,6 @@
     <color name="theme_light_tertiary">#282843</color>
     <color name="theme_light_onTertiary">#FFFFFF</color>
 
+    <color name="color_rating">#FFB800</color>
+
 </resources>

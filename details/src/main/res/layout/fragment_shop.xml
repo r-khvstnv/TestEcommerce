@@ -52,7 +52,7 @@
             tools:text="8gb" />
 
         <TextView
-            android:id="@+id/tv_shop_flash_capacity"
+            android:id="@+id/tv_shop_sd_capacity"
             style="@style/ShopTabStyle.TextView"
             tools:text="256 gb" />
     </LinearLayout>
@@ -61,6 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/shop_equipment_title_margin_top"
+        android:layout_marginBottom="@dimen/shop_equipment_title_margin_bottom"
         android:text="@string/title_select_color_and_capacity"
         android:textColor="?attr/colorPrimary"
         android:textSize="@dimen/shop_equipment_title_text_size"
@@ -135,6 +136,7 @@
                 android:text="@string/action_add_to_cart" />
 
             <TextView
+                android:id="@+id/tv_shop_cost"
                 style="@style/ShopTabStyle.TextView.AddToCart"
                 tools:text="$1,500.00" />
         </LinearLayout>

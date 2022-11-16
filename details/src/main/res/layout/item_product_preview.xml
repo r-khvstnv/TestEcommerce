@@ -2,8 +2,8 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/item_product_preview_card_width"
-    android:layout_height="@dimen/item_product_preview_card_height"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     app:cardCornerRadius="@dimen/item_product_preview_card_radius"
     app:strokeWidth="0dp">
 
@@ -11,6 +11,8 @@
         android:id="@+id/item_product_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/item_product_preview_image_margin"
         tools:ignore="ContentDescription" />
 
 

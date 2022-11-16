@@ -2,10 +2,12 @@ package com.rkhvstnv.testecommerce.core_data.data.utils
 
 import com.rkhvstnv.testecommerce.core_data.data.model.BestSeller
 import com.rkhvstnv.testecommerce.core_data.data.model.HomeStore
+import com.rkhvstnv.testecommerce.core_data.data.model.PhoneDto
 import com.rkhvstnv.testecommerce.core_data.data.model.Pojo
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
 import com.rkhvstnv.testecommerce.core_data.domain.model.BestSellerProduct
 import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
+import com.rkhvstnv.testecommerce.core_data.domain.model.Phone
 import com.rkhvstnv.testecommerce.utils.Mapper
 
 internal class BestSellerToBestSellerProductMapper: Mapper<BestSeller, BestSellerProduct>{
@@ -79,4 +81,34 @@ internal class PojoNetworkResultToBestSellerProductListResultMapper: Mapper<MyRe
             }
         }
     }
+}
+
+internal class PhoneDtoResultToPhoneResultMapper: Mapper<MyResult<PhoneDto>, MyResult<Phone>>{
+    override fun map(input: MyResult<PhoneDto>): MyResult<Phone> {
+        return when(input){
+            is MyResult.Error -> MyResult.Error(code = input.code, message = input.message)
+            is MyResult.Exception -> MyResult.Exception(e = input.e)
+            is MyResult.Success -> {
+                with(input.data){
+                    val phone = Phone(
+                        id = id,
+                        isFavorites = isFavorites,
+                        title = title,
+                        images = images,
+                        cpu = CPU,
+                        camera = camera,
+                        ram = ssd,
+                        sd = sd,
+                        capacity = capacity,
+                        color = color,
+                        price = price,
+                        rating = rating
+                    )
+
+                    MyResult.Success(data = phone)
+                }
+            }
+        }
+    }
+
 }
