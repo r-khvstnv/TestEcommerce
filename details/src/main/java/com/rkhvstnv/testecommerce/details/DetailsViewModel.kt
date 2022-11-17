@@ -35,7 +35,7 @@ internal class DetailsViewModel @Inject constructor(
                     id = it.data.id.toInt(),
                     amount = 1
                 )
-                addToCartUseCase.invoke(productInCartDtoList = listOf(productInCartDto))
+                addToCartUseCase.invoke(productInCartDto = productInCartDto)
             }
         }
     }

@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import java.text.DecimalFormat
 
 fun ImageView.loadImage(path: String){
-    Glide.with(context).load(path).centerCrop().into(this)
+    Glide.with(context).load(path).centerInside().into(this)
 }
 fun ImageView.loadImage(@DrawableRes drawable: Int){
     Glide.with(context).load(drawable).into(this)

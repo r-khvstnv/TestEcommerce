@@ -5,7 +5,7 @@
     <dimen name="cart_title_text_size">36sp</dimen>
     <dimen name="cart_checkout_layout_margin_top">48dp</dimen>
     <dimen name="cart_checkout_layout_padding_top">60dp</dimen>
-    <dimen name="cart_rv_products_in_cart_min_height">300dp</dimen>
+    <dimen name="cart_rv_products_in_cart_min_height">400dp</dimen>
 
     <dimen name="item_in_cart_margin_vertical">20dp</dimen>
     <dimen name="item_in_cart_text_size">20dp</dimen>
@@ -16,6 +16,7 @@
     <dimen name="item_in_cart_amount_layout_corner_radius">26dp</dimen>
     <dimen name="item_in_cart_icon_size">24dp</dimen>
     <dimen name="item_in_cart_icon_delete_margin">14dp</dimen>
+    <dimen name="item_in_cart_product_image_margin">4dp</dimen>
 
     <dimen name="cart_total_layout_margin_top">12dp</dimen>
     <dimen name="cart_total_text_size">16sp</dimen>

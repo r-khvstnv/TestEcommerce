@@ -64,6 +64,7 @@
             android:paddingTop="@dimen/cart_checkout_layout_padding_top">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_products_in_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/m_default_layout_margin"

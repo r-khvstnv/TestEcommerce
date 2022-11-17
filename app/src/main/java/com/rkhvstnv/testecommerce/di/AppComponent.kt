@@ -6,6 +6,7 @@ import com.rkhvstnv.testecommerce.cart.di.CartComponentDeps
 import com.rkhvstnv.testecommerce.core_data.domain.usecase.AddToCartUseCase
 import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetAllProductsInCartUseCase
 import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetPhoneByIdUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.UpdateCartUseCase
 import com.rkhvstnv.testecommerce.details.di.DetailsComponentDeps
 import com.rkhvstnv.testecommerce.home.di.HomeComponentDeps
 import dagger.BindsInstance
@@ -33,4 +34,5 @@ interface AppComponent:
     override val getPhoneByIdUseCase: GetPhoneByIdUseCase
     override val addToCartUseCase: AddToCartUseCase
     override val getAllProductsInCartUseCase: GetAllProductsInCartUseCase
+    override val updateCartUseCase: UpdateCartUseCase
 }

@@ -56,7 +56,7 @@ internal class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupProductImagesViewPager()
-        val adapter = DetailsTabPagerAdapter(this, 3)
+        val adapter = DetailsTabPagerAdapter(this, 1)
         binding.viewPagerTabs.adapter = adapter
 
         viewModel.phoneResult.observe(viewLifecycleOwner){
