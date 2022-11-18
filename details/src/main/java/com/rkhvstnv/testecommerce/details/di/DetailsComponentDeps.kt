@@ -34,7 +34,7 @@ interface DetailsComponentDepsProvider{
     companion object : DetailsComponentDepsProvider by DetailsComponentDepsStore
 }
 /**
- * Explicit Singleton which must be assigned in [TestEcommerceApp]
+ * Explicit Singleton which must be assigned in [TestEcommerceApp][com.rkhvstnv.testecommerce.TestEcommerceApp]
  * */
 object DetailsComponentDepsStore: DetailsComponentDepsProvider {
     override var deps: DetailsComponentDeps by Delegates.notNull()

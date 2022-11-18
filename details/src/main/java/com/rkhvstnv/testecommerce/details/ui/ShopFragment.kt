@@ -46,7 +46,6 @@ internal class ShopFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         viewModel.phoneResult.observe(viewLifecycleOwner){
             result ->
             if (result is MyResult.Success){
@@ -74,7 +73,6 @@ internal class ShopFragment : Fragment() {
         }
 
         binding.llShopBuy.setOnClickListener { viewModel.addPhoneToCart() }
-
     }
 
     override fun onDestroyView() {

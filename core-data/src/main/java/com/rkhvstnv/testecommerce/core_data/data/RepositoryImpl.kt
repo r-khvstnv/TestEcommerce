@@ -6,7 +6,7 @@ import com.rkhvstnv.testecommerce.core_data.data.sources.LocalSource
 import com.rkhvstnv.testecommerce.core_data.data.sources.RemoteSource
 import com.rkhvstnv.testecommerce.core_data.data.utils.*
 import com.rkhvstnv.testecommerce.core_data.data.utils.PhoneDtoResultToPhoneResultMapper
-import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToBestSellerProductListResultMapper
+import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToBestSellerDomainListResultMapper
 import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToHotSaleListResultMapper
 import com.rkhvstnv.testecommerce.core_data.data.utils.handleApi
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
@@ -19,7 +19,7 @@ internal class RepositoryImpl @Inject constructor(
     private val remoteSource: RemoteSource
 ): Repository {
     private val pojoNetworkResultToHotSaleListResultMapper = PojoNetworkResultToHotSaleListResultMapper()
-    private val pojoNetworkResultToBestSellerProductListResultMapper = PojoNetworkResultToBestSellerProductListResultMapper()
+    private val pojoNetworkResultToBestSellerDomainListResultMapper = PojoNetworkResultToBestSellerDomainListResultMapper()
     private val phoneDtoResultToPhoneResultMapper = PhoneDtoResultToPhoneResultMapper()
     private val categoryDtoToCategoryMapper = CategoryDtoToCategoryMapper()
 
@@ -27,7 +27,7 @@ internal class RepositoryImpl @Inject constructor(
         remoteSource.getPojo() }.let(pojoNetworkResultToHotSaleListResultMapper::map)
 
     override suspend fun getBestSellers(): MyResult<List<BestSeller>> =  handleApi {
-        remoteSource.getPojo() }.let(pojoNetworkResultToBestSellerProductListResultMapper::map)
+        remoteSource.getPojo() }.let(pojoNetworkResultToBestSellerDomainListResultMapper::map)
 
     /*For test purpose, every time, will be returned the same mock data.*/
     override suspend fun getPhoneById(id: Int): MyResult<Phone> = handleApi {

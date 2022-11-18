@@ -11,32 +11,6 @@ import com.rkhvstnv.testecommerce.core_data.domain.models.HotSale
 import com.rkhvstnv.testecommerce.core_data.domain.models.Phone
 import com.rkhvstnv.testecommerce.utils.Mapper
 
-internal class BestSellerToBestSellerProductMapper: Mapper<BestSeller, com.rkhvstnv.testecommerce.core_data.domain.models.BestSeller>{
-    override fun map(input: BestSeller): com.rkhvstnv.testecommerce.core_data.domain.models.BestSeller = with(input){
-        com.rkhvstnv.testecommerce.core_data.domain.models.BestSeller(
-            id = id,
-            is_favorites = is_favorites,
-            image = picture,
-            title = title,
-            price_without_discount = price_without_discount,
-            discount_price = discount_price,
-        )
-    }
-}
-
-internal class HomeStoreToHotSaleMapper: Mapper<HomeStore, HotSale>{
-    override fun map(input: HomeStore): HotSale = with(input){
-        HotSale(
-            id = id,
-            is_buy = is_buy,
-            is_new = is_new,
-            image = picture,
-            title = title,
-            subtitle = subtitle,
-        )
-    }
-}
-
 internal class PojoNetworkResultToHotSaleListResultMapper: Mapper<MyResult<Pojo>, MyResult<List<HotSale>>>{
     override fun map(input: MyResult<Pojo>): MyResult<List<HotSale>>{
         return when(input){
@@ -61,7 +35,7 @@ internal class PojoNetworkResultToHotSaleListResultMapper: Mapper<MyResult<Pojo>
     }
 }
 
-internal class PojoNetworkResultToBestSellerProductListResultMapper: Mapper<MyResult<Pojo>, MyResult<List<com.rkhvstnv.testecommerce.core_data.domain.models.BestSeller>>>{
+internal class PojoNetworkResultToBestSellerDomainListResultMapper: Mapper<MyResult<Pojo>, MyResult<List<com.rkhvstnv.testecommerce.core_data.domain.models.BestSeller>>>{
     override fun map(input: MyResult<Pojo>): MyResult<List<com.rkhvstnv.testecommerce.core_data.domain.models.BestSeller>>{
         return when(input){
             is MyResult.Error -> MyResult.Error(code = input.code, message = input.message)

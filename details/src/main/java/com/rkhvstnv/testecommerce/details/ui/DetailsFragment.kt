@@ -59,6 +59,7 @@ internal class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupProductImagesViewPager()
+
         val adapter = DetailsTabPagerAdapter(this, 1)
         binding.viewPagerTabs.adapter = adapter
 
@@ -123,5 +124,4 @@ internal class DetailsFragment : Fragment() {
         _binding = null
         super.onDestroyView()
     }
-
 }

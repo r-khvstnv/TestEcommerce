@@ -1,6 +1,5 @@
 package com.rkhvstnv.testecommerce.core_data.domain.usecases
 
-import android.util.Log
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
 import com.rkhvstnv.testecommerce.core_data.domain.Repository
 import com.rkhvstnv.testecommerce.core_data.domain.models.ProductInCart
@@ -15,8 +14,6 @@ class GetAllProductsInCartUseCase @Inject constructor(
             is MyResult.Error -> return MyResult.Error(dtoResult.code, dtoResult.message)
             is MyResult.Exception -> return MyResult.Error(1, "")
             is MyResult.Success -> {
-
-                Log.i("dtoResult1", dtoResult.data.toString())
 
                 val productInCartList = arrayListOf<ProductInCart>()
                 val productInCartDtoList = dtoResult.data
@@ -34,13 +31,11 @@ class GetAllProductsInCartUseCase @Inject constructor(
                                 image = phoneResult.data.images[0]
                             )
                             productInCartList.add(productInCart)
-                            Log.i("dtoResult_inter", productInCartList.toString())
                         }
                     }
 
                 }
 
-                Log.i("dtoResult2", productInCartList.toString())
                 return MyResult.Success(data = productInCartList)
             }
         }

@@ -1,5 +1,8 @@
 package com.rkhvstnv.testecommerce.core_data.data.models
 
+/**
+ * Data class provided by Api
+ * */
 internal data class PhoneDto(
     val CPU: String,
     val camera: String,

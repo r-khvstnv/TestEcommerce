@@ -7,18 +7,34 @@ import com.rkhvstnv.testecommerce.core_data.data.models.CategoryDto
 import com.rkhvstnv.testecommerce.core_data.data.utils.DatabaseConstants
 import javax.inject.Inject
 
-class MockDatabase @Inject constructor(context: Context) {
+/**
+ * MockDatabase which is satisfied assigned task.
+ *
+ * All data is recorded to [SharedPreferences]. In production/release version will be used SQL database
+ * wrapped by Room.
+ * */
+internal class MockDatabase @Inject constructor(context: Context) {
     private val sharedPreferences: SharedPreferences =
         context.getSharedPreferences(DatabaseConstants.APP_SHARED_PREF, Context.MODE_PRIVATE)
 
+    /**
+     * Method record Json [String] to [SharedPreferences]
+     * */
     fun insertAllProductInCart(json: String){
         val editor = sharedPreferences.edit()
         editor.putString(DatabaseConstants.PRODUCTS_IN_CART_KEY, json)
         editor.apply()
     }
 
+    /**
+     * Method returns Json [String] from [SharedPreferences].
+     * If [String] doesn't exist, will be returned empty [String].
+     * */
     fun getAllProductsInCart(): String = sharedPreferences.getString(DatabaseConstants.PRODUCTS_IN_CART_KEY, "") ?: ""
 
+    /**
+     * Method returns mock categories as list of [CategoryDto].
+     * */
     fun getAllCategories(): List<CategoryDto>{
         val cat1 = CategoryDto(
             id = 1,

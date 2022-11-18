@@ -4,6 +4,11 @@ import com.rkhvstnv.testecommerce.core_data.domain.MyResult
 import retrofit2.HttpException
 import retrofit2.Response
 
+/**
+ * Unified extension for handling the [Response].
+ *
+ * A method is processing [Response] and returns it as [MyResult].
+ * */
 internal suspend fun <T: Any> handleApi(
     execute: suspend () -> Response<T>
 ): MyResult<T> {

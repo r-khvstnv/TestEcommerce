@@ -21,6 +21,10 @@ internal class DetailsViewModel @Inject constructor(
     val phoneResult: LiveData<MyResult<Phone>> get() = _phoneResult
 
 
+    /**
+     * Method requests [Phone] from sources using [id].
+     * Received complex data will be assign to [_phoneResult] as [MyResult].
+     * */
     fun requestPhoneDataById(id: Int){
         viewModelScope.launch(Dispatchers.IO){
             val data = getPhoneByIdUseCase.invoke(id = id)
@@ -28,6 +32,9 @@ internal class DetailsViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Method adds [Phone] from [_phoneResult] to source.
+     * */
     fun addPhoneToCart(){
         _phoneResult.value?.let {
             if (it is MyResult.Success){

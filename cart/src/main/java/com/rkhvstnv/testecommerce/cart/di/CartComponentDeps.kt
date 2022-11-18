@@ -34,7 +34,7 @@ interface CartComponentDepsProvider{
     companion object : CartComponentDepsProvider by CartComponentDepsStore
 }
 /**
- * Explicit Singleton which must be assigned in [TestEcommerceApp]
+ * Explicit Singleton which must be assigned in [TestEcommerceApp][com.rkhvstnv.testecommerce.TestEcommerceApp]
  * */
 object CartComponentDepsStore: CartComponentDepsProvider {
     override var deps: CartComponentDeps by Delegates.notNull()

@@ -36,7 +36,7 @@ interface HomeComponentDepsProvider{
     companion object : HomeComponentDepsProvider by HomeComponentDepsStore
 }
 /**
- * Explicit Singleton which must be assigned in [TestEcommerceApp]
+ * Explicit Singleton which must be assigned in [TestEcommerceApp][com.rkhvstnv.testecommerce.TestEcommerceApp]
  * */
 object HomeComponentDepsStore: HomeComponentDepsProvider {
     override var deps: HomeComponentDeps by Delegates.notNull()

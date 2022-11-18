@@ -27,11 +27,14 @@ internal class HomeViewModel @Inject constructor(
     private var _bestSellersResult: MutableLiveData<MyResult<List<BestSeller>>> = MutableLiveData()
     val bestSellersResult: LiveData<MyResult<List<BestSeller>>> get() = _bestSellersResult
 
+
     init {
         fetchData()
     }
 
-
+    /**
+     * Method fetch data to [_allCategories], [_hotSalesResult], [_bestSellersResult]
+     * */
     private fun fetchData(){
         viewModelScope.launch(Dispatchers.IO){
             _allCategories.postValue(getAllCategoriesUseCase.invoke())
@@ -40,6 +43,10 @@ internal class HomeViewModel @Inject constructor(
         }
     }
 
+
+    /**
+     * Methods simulates request/respond to calling another category by [id].
+     * */
     fun requestCategoryById(id: Int){
         /*
         * Some code to request category

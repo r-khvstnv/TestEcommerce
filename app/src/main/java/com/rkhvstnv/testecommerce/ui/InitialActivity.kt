@@ -10,7 +10,10 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.rkhvstnv.testecommerce.databinding.ActivityInitialBinding
 
-
+/*
+* At the current app is used ordinary fragment with delay instead of SplashApi.
+* This approach is meeting the objectives more efficient.
+* */
 class InitialActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInitialBinding
 

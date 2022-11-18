@@ -4,6 +4,13 @@ import androidx.lifecycle.ViewModel
 import dagger.MapKey
 import kotlin.reflect.KClass
 
+
+/**
+ * [MapKey] for [ViewModel]s.
+ *
+ * Annotation is required for
+ * [ViewModelFactory][com.rkhvstnv.testecommerce.core.ViewModelFactory] implementation.
+ * */
 @Target(
     AnnotationTarget.FUNCTION,
     AnnotationTarget.PROPERTY_GETTER,

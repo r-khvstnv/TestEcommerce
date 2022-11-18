@@ -59,7 +59,6 @@ class BottomSheetFilterFragment: BottomSheetDialogFragment() {
             )
             this.adapter = adapter
         }
-
     }
 
 

@@ -27,6 +27,9 @@ internal class CartViewModel @Inject constructor(
         fetchData()
     }
 
+    /**
+     * Method fetch data for [_inCartResult] and [_allProductsInCart] respectively.
+     * */
     private fun fetchData(){
         viewModelScope.launch(Dispatchers.IO){
             val data = getAllProductsInCartUseCase.invoke()
@@ -37,6 +40,10 @@ internal class CartViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Method updates [ProductInCart.amount] for [productInCart] using [amount].
+     * All changes has affect locally, namely in [_allProductsInCart].
+     * */
    fun changeProductInCartAmount(productInCart: ProductInCart, amount: Int){
        if (_allProductsInCart.value != null){
            val newList = _allProductsInCart.value!!.toMutableList()
@@ -58,6 +65,9 @@ internal class CartViewModel @Inject constructor(
        }
    }
 
+    /**
+     * Method removes [productInCart] locally, namely from [_allProductsInCart].
+     * */
     fun removeProductFromCart(productInCart: ProductInCart){
         if (_allProductsInCart.value != null){
             val newList = _allProductsInCart.value!!.toMutableList()
@@ -68,10 +78,13 @@ internal class CartViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Method updates [_totalCost] using [ProductInCart.totalCost] in [_allProductsInCart] list.
+     * */
     fun estimateTotalCost(){
         _allProductsInCart.value?.let {
             list ->
-            var total: Int = 0
+            var total = 0
             for (item in list){
                 total += item.totalCost
             }
@@ -79,6 +92,9 @@ internal class CartViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Method updates [List] of [ProductInCart] in source. Data will be given by [_allProductsInCart].
+     * */
     fun updateProductsInCart(){
         _allProductsInCart.value?.let {
             updateCartUseCase.invoke(list = it)

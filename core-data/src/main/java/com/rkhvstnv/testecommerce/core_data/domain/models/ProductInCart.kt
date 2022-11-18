@@ -8,14 +8,32 @@ class ProductInCart(
     val name: String,
     val price: Int,
     val image: String,
+    /**
+     * Value changes automatically using [amount][com.rkhvstnv.testecommerce.core_data.domain.models.ProductInCart.amount]
+     * */
     var totalCost: Int = amount * price
 ){
+
+    /**
+     * Value has custom set method. Before field will be assigned,
+     * [totalCost][com.rkhvstnv.testecommerce.core_data.domain.models.ProductInCart.totalCost]
+     * is estimated.
+     * */
     var amount: Int = amount
     set(value) {
         totalCost = value * price
         field = value
     }
 
+    /**
+     * This value __is necessary__ due to the specifics of the technical task.
+     *
+     * Specific Details:
+     *
+     * [List] of [ProductInCart] with all equals field should be displayed
+     * in the RecyclerView. For efficient solving of this problem and futures as well are used [hashMock].
+     *
+     * */
     private val hashMock: String = UUID.randomUUID().toString()
 
 

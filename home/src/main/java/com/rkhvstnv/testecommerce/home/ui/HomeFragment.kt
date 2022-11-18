@@ -57,10 +57,12 @@ internal class HomeFragment : Fragment() {
 
         setupRecyclerViews()
 
+
         viewModel.allCategories.observe(viewLifecycleOwner){
             list ->
             categoryAdapter.submitList(list)
         }
+
         viewModel.hotSalesResult.observe(viewLifecycleOwner){
             result ->
             when(result){
@@ -77,6 +79,7 @@ internal class HomeFragment : Fragment() {
                 }
             }
         }
+
         viewModel.bestSellersResult.observe(viewLifecycleOwner){
             result ->
             when(result){
@@ -94,6 +97,7 @@ internal class HomeFragment : Fragment() {
             }
         }
 
+
         binding.ivFilter.setOnClickListener {
             BottomSheetFilterFragment().show(parentFragmentManager, "tag")
         }
@@ -103,12 +107,12 @@ internal class HomeFragment : Fragment() {
     }
 
 
-
     private fun navigateToDetails(id: Int){
         val link = getString(com.rkhvstnv.testecommerce.core.R.string.deep_link_details_base)
         val uri = Uri.parse(link + id)
         findNavController().navigate(uri)
     }
+
 
     private fun setupRecyclerViews(){
         categoryAdapter = CategoryAdapter(requireContext(), viewModel::requestCategoryById)
@@ -153,11 +157,8 @@ internal class HomeFragment : Fragment() {
     }
 
 
-
-
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
     }
-
 }
