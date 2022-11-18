@@ -41,7 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_product_preview_card_height"
             android:paddingHorizontal="@dimen/item_product_preview_padding_horizontal"
-            tools:background="?attr/colorPrimary" />
+            tools:background="?attr/colorOnSurface" />
+
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -86,6 +87,7 @@
                         app:tint="?attr/colorOnPrimary" />
                 </FrameLayout>
 
+
                 <RatingBar
                     android:id="@+id/rb_product_rating"
                     android:layout_width="wrap_content"
@@ -98,6 +100,7 @@
                     android:transformPivotX="0dp"
                     android:transformPivotY="0dp"
                     tools:rating="3.5" />
+
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/_tab_product_details"
@@ -123,13 +126,12 @@
                         android:text="@string/label_features" />
                 </com.google.android.material.tabs.TabLayout>
 
+
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/view_pager_tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_shop" />
-
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

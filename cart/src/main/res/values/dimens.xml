@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="top_app_bar_location_subtitle_margin_end">8dp</dimen>
+
     <dimen name="cart_title_margin_top">44dp</dimen>
     <dimen name="cart_title_text_size">36sp</dimen>
+
     <dimen name="cart_checkout_layout_margin_top">48dp</dimen>
     <dimen name="cart_checkout_layout_padding_top">60dp</dimen>
     <dimen name="cart_rv_products_in_cart_min_height">400dp</dimen>

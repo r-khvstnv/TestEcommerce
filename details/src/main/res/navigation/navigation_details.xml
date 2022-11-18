@@ -12,12 +12,9 @@
         tools:layout="@layout/fragment_details">
         <argument
             android:name="@string/deep_link_details_argument_name"
-            app:argType="integer"
             android:defaultValue="-1"
-            />
-        <deepLink
-            app:uri="@string/deep_link_details_url"
-            />
+            app:argType="integer" />
+        <deepLink app:uri="@string/deep_link_details_url" />
     </fragment>
     <fragment
         android:id="@+id/shopFragment"

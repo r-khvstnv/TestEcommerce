@@ -57,6 +57,7 @@
             tools:text="256 gb" />
     </LinearLayout>
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,6 +67,7 @@
         android:textColor="?attr/colorPrimary"
         android:textSize="@dimen/shop_equipment_title_text_size"
         app:fontFamily="@font/mark_pro_medium" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,6 +93,7 @@
                 tools:backgroundTint="?attr/colorSecondary" />
         </RadioGroup>
 
+
         <RadioGroup
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -114,6 +117,7 @@
         </RadioGroup>
 
     </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -141,6 +145,4 @@
                 tools:text="$1,500.00" />
         </LinearLayout>
     </FrameLayout>
-
-
 </LinearLayout>

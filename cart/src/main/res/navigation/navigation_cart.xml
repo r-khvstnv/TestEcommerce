@@ -9,9 +9,7 @@
         android:id="@+id/cartFragment"
         android:name="com.rkhvstnv.testecommerce.cart.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" >
-        <deepLink
-            app:uri="@string/deep_link_cart_url"
-            />
+        tools:layout="@layout/fragment_cart">
+        <deepLink app:uri="@string/deep_link_cart_url" />
     </fragment>
 </navigation>

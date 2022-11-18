@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardElevation="@dimen/m_default_card_elevation"
     app:cardCornerRadius="@dimen/item_product_preview_card_radius"
+    app:cardElevation="@dimen/m_default_card_elevation"
     app:strokeWidth="0dp">
 
     <ImageView
@@ -16,6 +16,4 @@
         android:background="?attr/colorSurface"
         android:padding="@dimen/item_product_preview_image_margin"
         tools:ignore="ContentDescription" />
-
-
 </com.google.android.material.card.MaterialCardView>

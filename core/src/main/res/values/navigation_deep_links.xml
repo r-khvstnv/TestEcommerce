@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Cart module-->
+    <!--deeplink for navigation and xml files-->
     <string name="deep_link_cart_url">android-app://com.rkhvstnv.testecommerce.app/cartFragment</string>
 
+    <!--Details module-->
+    <!--base deeplink for xml files-->
     <string name="deep_link_details_base">android-app://com.rkhvstnv.testecommerce.app/detailsFragment/</string>
+    <!--argument name used in dl-->
     <string name="deep_link_details_argument_name">productId</string>
+    <!--deeplink for navigation-->
     <string name="deep_link_details_url">android-app://com.rkhvstnv.testecommerce.app/detailsFragment/{productId}</string>
 </resources>

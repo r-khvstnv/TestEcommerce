@@ -19,6 +19,7 @@
             tools:background="?attr/colorPrimary"
             tools:ignore="ContentDescription" />
 
+
         <LinearLayout
             android:layout_width="@dimen/item_hot_offer_linear_layout_width"
             android:layout_height="match_parent"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MyTopAppBarComponent"/>
+
+    <style name="MyTopAppBarComponent" />
 
     <style name="MyTopAppBarComponent.Button">
         <item name="android:layout_height">@dimen/top_app_bar_button_height</item>

@@ -50,6 +50,7 @@
             android:id="@+id/spinner_brand"
             style="@style/FilterSpinnerStyle" />
 
+
         <TextView
             style="@style/FilterTitleTextStyle"
             android:text="@string/title_price" />
@@ -57,6 +58,7 @@
         <Spinner
             android:id="@+id/spinner_price"
             style="@style/FilterSpinnerStyle" />
+
 
         <TextView
             style="@style/FilterTitleTextStyle"

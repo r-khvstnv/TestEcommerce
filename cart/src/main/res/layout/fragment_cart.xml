@@ -43,6 +43,7 @@
             </LinearLayout>
         </FrameLayout>
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,7 +123,6 @@
                 app:fontFamily="@font/mark_pro_bold" />
 
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

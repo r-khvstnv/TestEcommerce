@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
@@ -64,6 +65,7 @@
             </FrameLayout>
         </Toolbar>
 
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,6 +86,7 @@
                 android:text="@string/hint_view_all" />
         </FrameLayout>
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_categories"
             android:layout_width="match_parent"
@@ -92,6 +95,7 @@
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_category"
             tools:orientation="horizontal" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -105,9 +109,9 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/qr_icon_size"
                 android:layout_weight="2"
-                android:elevation="@dimen/m_default_card_elevation"
                 android:background="@drawable/shape_rectangle_corner50"
                 android:backgroundTint="?attr/colorSurface"
+                android:elevation="@dimen/m_default_card_elevation"
                 android:searchIcon="@drawable/ic_search" />
 
             <ImageView
@@ -122,6 +126,7 @@
                 android:src="@drawable/ic_scanner"
                 app:tint="?attr/colorOnSecondary" />
         </LinearLayout>
+
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -148,11 +153,12 @@
             android:id="@+id/rv_hot_sales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/item_hot_offer_card_height"
             android:layout_marginHorizontal="@dimen/m_default_margin"
+            android:minHeight="@dimen/item_hot_offer_card_height"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_hot_offer"
             tools:orientation="horizontal" />
+
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -179,10 +185,11 @@
             android:id="@+id/rv_best_sellers"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="300dp"
             android:layout_marginHorizontal="@dimen/m_default_margin"
             android:layout_marginBottom="@dimen/m_default_layout_margin"
-            tools:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-            tools:listitem="@layout/item_product" />
+            android:minHeight="300dp"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_product"
+            tools:spanCount="2" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
