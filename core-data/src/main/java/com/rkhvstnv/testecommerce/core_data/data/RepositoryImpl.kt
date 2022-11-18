@@ -2,8 +2,8 @@ package com.rkhvstnv.testecommerce.core_data.data
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
-import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
+import com.rkhvstnv.testecommerce.core_data.data.sources.LocalSource
+import com.rkhvstnv.testecommerce.core_data.data.sources.RemoteSource
 import com.rkhvstnv.testecommerce.core_data.data.utils.*
 import com.rkhvstnv.testecommerce.core_data.data.utils.PhoneDtoResultToPhoneResultMapper
 import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToBestSellerProductListResultMapper
@@ -11,7 +11,7 @@ import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToHotSal
 import com.rkhvstnv.testecommerce.core_data.data.utils.handleApi
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
 import com.rkhvstnv.testecommerce.core_data.domain.Repository
-import com.rkhvstnv.testecommerce.core_data.domain.model.*
+import com.rkhvstnv.testecommerce.core_data.domain.models.*
 import javax.inject.Inject
 
 internal class RepositoryImpl @Inject constructor(

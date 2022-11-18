@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.rkhvstnv.testecommerce.cart.CartFragment"
+        android:name="com.rkhvstnv.testecommerce.cart.ui.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart">
         <deepLink app:uri="@string/deep_link_cart_url" />

@@ -57,5 +57,5 @@ dependencies {
     kapt ("com.google.dagger:dagger-compiler:$dagger2_ver")
     kapt ("com.google.dagger:dagger-android-processor:$dagger2_ver")
 
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2'
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_ver"
 }

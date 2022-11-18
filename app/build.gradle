@@ -63,7 +63,5 @@ dependencies {
     implementation ("com.google.dagger:dagger-android-support:$dagger2_ver")
     kapt ("com.google.dagger:dagger-compiler:$dagger2_ver")
     kapt ("com.google.dagger:dagger-android-processor:$dagger2_ver")
-    //retrofit2
-    implementation "com.squareup.retrofit2:retrofit:$retrofit2_ver"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_ver"
+
 }

@@ -3,7 +3,7 @@ package com.rkhvstnv.testecommerce.core_data.data.database
 import android.content.Context
 import android.content.SharedPreferences
 import com.rkhvstnv.testecommerce.core_data.R
-import com.rkhvstnv.testecommerce.core_data.data.model.CategoryDto
+import com.rkhvstnv.testecommerce.core_data.data.models.CategoryDto
 import com.rkhvstnv.testecommerce.core_data.data.utils.DatabaseConstants
 import javax.inject.Inject
 

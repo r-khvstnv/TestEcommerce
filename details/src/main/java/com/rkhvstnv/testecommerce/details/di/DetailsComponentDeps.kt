@@ -2,8 +2,8 @@ package com.rkhvstnv.testecommerce.details.di
 
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.ViewModel
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.AddToCartUseCase
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetPhoneByIdUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.AddToCartUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.GetPhoneByIdUseCase
 import kotlin.properties.Delegates
 
 /**

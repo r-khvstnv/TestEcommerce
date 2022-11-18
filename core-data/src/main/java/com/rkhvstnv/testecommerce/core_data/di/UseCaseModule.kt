@@ -1,7 +1,7 @@
 package com.rkhvstnv.testecommerce.core_data.di
 
 import com.rkhvstnv.testecommerce.core_data.domain.Repository
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.*
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.*
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

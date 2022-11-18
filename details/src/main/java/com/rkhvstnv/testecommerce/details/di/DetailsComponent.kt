@@ -2,11 +2,11 @@ package com.rkhvstnv.testecommerce.details.di
 
 import androidx.lifecycle.ViewModel
 import com.rkhvstnv.testecommerce.core.ViewModelFactoryModule
-import com.rkhvstnv.testecommerce.core.annotation.FeatureScope
-import com.rkhvstnv.testecommerce.core.annotation.ViewModelKey
-import com.rkhvstnv.testecommerce.details.DetailsFragment
-import com.rkhvstnv.testecommerce.details.DetailsViewModel
-import com.rkhvstnv.testecommerce.details.ShopFragment
+import com.rkhvstnv.testecommerce.core.annotations.FeatureScope
+import com.rkhvstnv.testecommerce.core.annotations.ViewModelKey
+import com.rkhvstnv.testecommerce.details.ui.DetailsFragment
+import com.rkhvstnv.testecommerce.details.ui.DetailsViewModel
+import com.rkhvstnv.testecommerce.details.ui.ShopFragment
 import dagger.Binds
 import dagger.Component
 import dagger.Module

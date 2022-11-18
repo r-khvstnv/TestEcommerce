@@ -1,9 +1,8 @@
 package com.rkhvstnv.testecommerce.di
 
 import android.app.Application
-import com.rkhvstnv.testecommerce.MainActivity
 import com.rkhvstnv.testecommerce.cart.di.CartComponentDeps
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.*
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.*
 import com.rkhvstnv.testecommerce.details.di.DetailsComponentDeps
 import com.rkhvstnv.testecommerce.home.di.HomeComponentDeps
 import dagger.BindsInstance
@@ -25,8 +24,6 @@ interface AppComponent:
 
         fun build(): AppComponent
     }
-
-    fun inject(mainActivity: MainActivity)
 
     override val getPhoneByIdUseCase: GetPhoneByIdUseCase
     override val addToCartUseCase: AddToCartUseCase

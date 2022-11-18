@@ -2,9 +2,9 @@ package com.rkhvstnv.testecommerce.home.di
 
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.ViewModel
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetAllCategoriesUseCase
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetBestSellersUseCase
-import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetHotSalesUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.GetAllCategoriesUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.GetBestSellersUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecases.GetHotSalesUseCase
 import kotlin.properties.Delegates
 
 /**

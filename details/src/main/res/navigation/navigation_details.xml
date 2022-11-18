@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.rkhvstnv.testecommerce.details.DetailsFragment"
+        android:name="com.rkhvstnv.testecommerce.details.ui.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details">
         <argument
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/shopFragment"
-        android:name="com.rkhvstnv.testecommerce.details.ShopFragment"
+        android:name="com.rkhvstnv.testecommerce.details.ui.ShopFragment"
         android:label="fragment_shop"
         tools:layout="@layout/fragment_shop" />
 </navigation>

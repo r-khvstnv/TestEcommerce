@@ -3,26 +3,20 @@ package com.rkhvstnv.testecommerce.core_data.di
 import android.app.Application
 import com.rkhvstnv.testecommerce.core_data.data.database.MockDatabase
 import com.rkhvstnv.testecommerce.core_data.data.network.MockyService
-import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
-import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
-import com.rkhvstnv.testecommerce.core_data.data.utils.NetworkConst
+import com.rkhvstnv.testecommerce.core_data.data.network.RetrofitContainer
+import com.rkhvstnv.testecommerce.core_data.data.sources.LocalSource
+import com.rkhvstnv.testecommerce.core_data.data.sources.RemoteSource
 import dagger.Module
 import dagger.Provides
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
 internal class SourceModule {
     @[Provides Singleton]
-    fun providesRetrofitBuilder(): Retrofit{
-        return Retrofit.Builder()
-            .baseUrl(NetworkConst.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+    fun providesRetrofitBuilder(): RetrofitContainer = RetrofitContainer
+
     @[Provides Singleton]
-    fun providesMockyService(retrofit: Retrofit): MockyService = retrofit.create(MockyService::class.java)
+    fun providesMockyService(retrofit: RetrofitContainer): MockyService = retrofit.get().create(MockyService::class.java)
 
     @[Provides Singleton]
     fun providesRemoteSource(mockyService: MockyService): RemoteSource = RemoteSource(service = mockyService)

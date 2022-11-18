@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/mockFragment1"
-        android:name="com.rkhvstnv.testecommerce.MockFragment"
+        android:name="com.rkhvstnv.testecommerce.ui.MockFragment"
         android:label="fragment_mock"
         tools:layout="@layout/fragment_mock" />
     <fragment
         android:id="@+id/mockFragment2"
-        android:name="com.rkhvstnv.testecommerce.MockFragment"
+        android:name="com.rkhvstnv.testecommerce.ui.MockFragment"
         android:label="fragment_mock"
         tools:layout="@layout/fragment_mock" />
 </navigation>

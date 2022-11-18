@@ -1,8 +1,8 @@
 package com.rkhvstnv.testecommerce.core_data.di
 
 import com.rkhvstnv.testecommerce.core_data.data.RepositoryImpl
-import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
-import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
+import com.rkhvstnv.testecommerce.core_data.data.sources.LocalSource
+import com.rkhvstnv.testecommerce.core_data.data.sources.RemoteSource
 import com.rkhvstnv.testecommerce.core_data.domain.Repository
 import dagger.Module
 import dagger.Provides

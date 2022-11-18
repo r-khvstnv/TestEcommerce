@@ -1,8 +1,8 @@
 package com.rkhvstnv.testecommerce.core_data.data.network
 
 import com.rkhvstnv.testecommerce.core_data.data.utils.NetworkConst
-import com.rkhvstnv.testecommerce.core_data.data.model.PhoneDto
-import com.rkhvstnv.testecommerce.core_data.data.model.Pojo
+import com.rkhvstnv.testecommerce.core_data.data.models.PhoneDto
+import com.rkhvstnv.testecommerce.core_data.data.models.Pojo
 import retrofit2.Response
 import retrofit2.http.GET
 

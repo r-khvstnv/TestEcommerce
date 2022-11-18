@@ -1,6 +1,6 @@
 package com.rkhvstnv.testecommerce.core_data.domain
 
-import com.rkhvstnv.testecommerce.core_data.domain.model.*
+import com.rkhvstnv.testecommerce.core_data.domain.models.*
 
 interface Repository {
     suspend fun getHotSales(): MyResult<List<HotSale>>

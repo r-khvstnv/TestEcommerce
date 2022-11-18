@@ -2,10 +2,10 @@ package com.rkhvstnv.testecommerce.home.di
 
 import androidx.lifecycle.ViewModel
 import com.rkhvstnv.testecommerce.core.ViewModelFactoryModule
-import com.rkhvstnv.testecommerce.core.annotation.FeatureScope
-import com.rkhvstnv.testecommerce.core.annotation.ViewModelKey
-import com.rkhvstnv.testecommerce.home.HomeFragment
-import com.rkhvstnv.testecommerce.home.HomeViewModel
+import com.rkhvstnv.testecommerce.core.annotations.FeatureScope
+import com.rkhvstnv.testecommerce.core.annotations.ViewModelKey
+import com.rkhvstnv.testecommerce.home.ui.HomeFragment
+import com.rkhvstnv.testecommerce.home.ui.HomeViewModel
 import dagger.Binds
 import dagger.Component
 import dagger.Module
