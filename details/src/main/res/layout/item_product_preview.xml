@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:cardElevation="@dimen/m_default_card_elevation"
     app:cardCornerRadius="@dimen/item_product_preview_card_radius"
     app:strokeWidth="0dp">
 
@@ -12,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/item_product_preview_image_margin"
+        android:background="?attr/colorSurface"
+        android:padding="@dimen/item_product_preview_image_margin"
         tools:ignore="ContentDescription" />
 
 

@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/details_card_margin_vertical"
             android:background="?attr/colorSurface"
+            android:elevation="@dimen/m_default_card_elevation"
             app:cardCornerRadius="@dimen/details_card_radius"
             app:strokeWidth="0dp">
 

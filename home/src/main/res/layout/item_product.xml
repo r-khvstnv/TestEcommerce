@@ -7,11 +7,13 @@
     android:layout_margin="@dimen/item_product_card_margin"
     app:cardCornerRadius="@dimen/item_product_card_radius"
     app:strokeWidth="0dp"
+    app:cardElevation="@dimen/m_default_card_elevation"
     tools:ignore="ContentDescription">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurface"
         android:orientation="vertical">
 
         <FrameLayout
@@ -41,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/item_product_cost_layout_margin_top"
+            android:layout_marginStart="@dimen/item_product_text_margin_start"
             android:gravity="bottom"
             android:orientation="horizontal">
 
@@ -71,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/item_product_name_margin_top"
             android:layout_marginBottom="@dimen/item_product_name_margin_bottom"
+            android:layout_marginStart="@dimen/item_product_text_margin_start"
             android:textColor="?attr/colorPrimary"
             android:textSize="@dimen/item_product_name_text_size"
             app:fontFamily="@font/mark_pro_medium"

@@ -39,9 +39,9 @@
     <dimen name="item_hot_offer_buy_height">26dp</dimen>
 
     <dimen name="item_product_card_radius">10dp</dimen>
-    <dimen name="item_product_card_margin">7dp</dimen>
-    <dimen name="item_product_image_width">180dp</dimen>
-    <dimen name="item_product_image_height">168dp</dimen>
+    <dimen name="item_product_card_margin">8dp</dimen>
+    <dimen name="item_product_image_width">170dp</dimen>
+    <dimen name="item_product_image_height">158dp</dimen>
     <dimen name="item_product_iv_favourite_size">25dp</dimen>
     <dimen name="item_product_iv_favourite_margin">12dp</dimen>
     <dimen name="item_product_iv_favourite_padding">4dp</dimen>
@@ -52,6 +52,7 @@
     <dimen name="item_product_name_text_size">12sp</dimen>
     <dimen name="item_product_name_margin_top">6dp</dimen>
     <dimen name="item_product_name_margin_bottom">16dp</dimen>
+    <dimen name="item_product_text_margin_start">16dp</dimen>
 
     <dimen name="filter_title_text_size">18sp</dimen>
     <dimen name="filter_title_text_margin_vertical">6dp</dimen>

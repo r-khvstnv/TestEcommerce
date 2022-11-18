@@ -105,6 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/qr_icon_size"
                 android:layout_weight="2"
+                android:elevation="@dimen/m_default_card_elevation"
                 android:background="@drawable/shape_rectangle_corner50"
                 android:backgroundTint="?attr/colorSurface"
                 android:searchIcon="@drawable/ic_search" />
@@ -116,6 +117,7 @@
                 android:layout_marginStart="@dimen/qr_icon_margin_start"
                 android:background="@drawable/shape_circle"
                 android:backgroundTint="?attr/colorSecondary"
+                android:elevation="@dimen/m_default_card_elevation"
                 android:padding="4dp"
                 android:src="@drawable/ic_scanner"
                 app:tint="?attr/colorOnSecondary" />
@@ -146,6 +148,7 @@
             android:id="@+id/rv_hot_sales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/item_hot_offer_card_height"
             android:layout_marginHorizontal="@dimen/m_default_margin"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_hot_offer"
@@ -176,7 +179,9 @@
             android:id="@+id/rv_best_sellers"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:minHeight="300dp"
             android:layout_marginHorizontal="@dimen/m_default_margin"
+            android:layout_marginBottom="@dimen/m_default_layout_margin"
             tools:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             tools:listitem="@layout/item_product" />
     </LinearLayout>

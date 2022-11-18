@@ -6,15 +6,14 @@ import com.rkhvstnv.testecommerce.core_data.data.model.HomeStore
 import com.rkhvstnv.testecommerce.core_data.data.model.PhoneDto
 import com.rkhvstnv.testecommerce.core_data.data.model.Pojo
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
-import com.rkhvstnv.testecommerce.core_data.domain.model.BestSellerProduct
 import com.rkhvstnv.testecommerce.core_data.domain.model.Category
 import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
 import com.rkhvstnv.testecommerce.core_data.domain.model.Phone
 import com.rkhvstnv.testecommerce.utils.Mapper
 
-internal class BestSellerToBestSellerProductMapper: Mapper<BestSeller, BestSellerProduct>{
-    override fun map(input: BestSeller): BestSellerProduct = with(input){
-        BestSellerProduct(
+internal class BestSellerToBestSellerProductMapper: Mapper<BestSeller, com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller>{
+    override fun map(input: BestSeller): com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller = with(input){
+        com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller(
             id = id,
             is_favorites = is_favorites,
             image = picture,
@@ -62,15 +61,15 @@ internal class PojoNetworkResultToHotSaleListResultMapper: Mapper<MyResult<Pojo>
     }
 }
 
-internal class PojoNetworkResultToBestSellerProductListResultMapper: Mapper<MyResult<Pojo>, MyResult<List<BestSellerProduct>>>{
-    override fun map(input: MyResult<Pojo>): MyResult<List<BestSellerProduct>>{
+internal class PojoNetworkResultToBestSellerProductListResultMapper: Mapper<MyResult<Pojo>, MyResult<List<com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller>>>{
+    override fun map(input: MyResult<Pojo>): MyResult<List<com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller>>{
         return when(input){
             is MyResult.Error -> MyResult.Error(code = input.code, message = input.message)
             is MyResult.Exception -> MyResult.Exception(e = input.e)
             is MyResult.Success -> {
                 val bestSellers = input.data.best_seller.map {
                     bestSeller: BestSeller ->
-                    BestSellerProduct(
+                    com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller(
                         id = bestSeller.id,
                         is_favorites = bestSeller.is_favorites,
                         image = bestSeller.picture,

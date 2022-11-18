@@ -34,4 +34,5 @@ interface AppComponent:
     override val updateCartUseCase: UpdateCartUseCase
     override val getAllCategoriesUseCase: GetAllCategoriesUseCase
     override val getHotSalesUseCase: GetHotSalesUseCase
+    override val getBestSellersUseCase: GetBestSellersUseCase
 }

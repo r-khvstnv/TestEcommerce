@@ -5,9 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
+import com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller
 import com.rkhvstnv.testecommerce.core_data.domain.model.Category
 import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
 import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetAllCategoriesUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetBestSellersUseCase
 import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetHotSalesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,12 +17,15 @@ import javax.inject.Inject
 
 internal class HomeViewModel @Inject constructor(
     private val getAllCategoriesUseCase: GetAllCategoriesUseCase,
-    private val getHotSalesUseCase: GetHotSalesUseCase
+    private val getHotSalesUseCase: GetHotSalesUseCase,
+    private val getBestSellersUseCase: GetBestSellersUseCase
 ): ViewModel() {
     private var _allCategories: MutableLiveData<List<Category>> = MutableLiveData()
     val allCategories: LiveData<List<Category>> get() = _allCategories
     private var _hotSalesResult: MutableLiveData<MyResult<List<HotSale>>> = MutableLiveData()
     val hotSalesResult: LiveData<MyResult<List<HotSale>>> get() = _hotSalesResult
+    private var _bestSellersResult: MutableLiveData<MyResult<List<BestSeller>>> = MutableLiveData()
+    val bestSellersResult: LiveData<MyResult<List<BestSeller>>> get() = _bestSellersResult
 
     init {
         fetchData()
@@ -31,6 +36,7 @@ internal class HomeViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO){
             _allCategories.postValue(getAllCategoriesUseCase.invoke())
             _hotSalesResult.postValue(getHotSalesUseCase.invoke())
+            _bestSellersResult.postValue(getBestSellersUseCase.invoke())
         }
     }
 

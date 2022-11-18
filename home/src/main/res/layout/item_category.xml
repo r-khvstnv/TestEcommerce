@@ -18,6 +18,7 @@
         android:background="@drawable/shape_circle"
         android:scaleType="center"
         tools:backgroundTint="?attr/colorSecondary"
+        android:elevation="@dimen/m_default_card_elevation"
         tools:ignore="ContentDescription"
         tools:src="@drawable/ic_phone" />
 

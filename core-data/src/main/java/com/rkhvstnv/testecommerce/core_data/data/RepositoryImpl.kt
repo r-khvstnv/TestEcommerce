@@ -2,7 +2,6 @@ package com.rkhvstnv.testecommerce.core_data.data
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.rkhvstnv.testecommerce.core_data.data.model.CategoryDto
 import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
 import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
 import com.rkhvstnv.testecommerce.core_data.data.utils.*
@@ -27,7 +26,7 @@ internal class RepositoryImpl @Inject constructor(
     override suspend fun getHotSales(): MyResult<List<HotSale>> = handleApi {
         remoteSource.getPojo() }.let(pojoNetworkResultToHotSaleListResultMapper::map)
 
-    override suspend fun getBestSellers(): MyResult<List<BestSellerProduct>> =  handleApi {
+    override suspend fun getBestSellers(): MyResult<List<BestSeller>> =  handleApi {
         remoteSource.getPojo() }.let(pojoNetworkResultToBestSellerProductListResultMapper::map)
 
     /*For test purpose, every time, will be returned the same mock data.*/

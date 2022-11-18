@@ -13,7 +13,7 @@ import com.rkhvstnv.testecommerce.utils.loadImage
 
 internal class CategoryAdapter(
     private val context: Context,
-    private val categoryAdapterCallback: CategoryAdapterCallback
+    private val itemCategoryClicked: (Int) -> Unit
 ): ListAdapter<Category, CategoryAdapter.ViewHolder>(CategoryDiff()) {
     class ViewHolder(val binding: ItemCategoryBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -41,7 +41,7 @@ internal class CategoryAdapter(
             }
         }
 
-        holder.itemView.setOnClickListener { categoryAdapterCallback.onClick(id = category.id) }
+        holder.itemView.setOnClickListener { itemCategoryClicked(category.id) }
     }
 }
 

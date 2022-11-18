@@ -3,17 +3,20 @@ package com.rkhvstnv.testecommerce.home
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
+import com.rkhvstnv.testecommerce.core_data.domain.model.BestSeller
+import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
 import com.rkhvstnv.testecommerce.home.databinding.FragmentHomeBinding
 import com.rkhvstnv.testecommerce.home.di.HomeComponentViewModule
 import javax.inject.Inject
@@ -28,7 +31,9 @@ internal class HomeFragment : Fragment() {
     private val viewModel by viewModels<HomeViewModel> { viewModelFactory }
 
     private lateinit var categoryAdapter: CategoryAdapter
-    private val hotSaleAdapter by lazy { HotSaleAdapter(requireContext()) }
+    private var hotSaleAdapter = HomeAdapterDelegator{}
+    private lateinit var bestSellerAdapter: HomeAdapterDelegator
+
 
     override fun onAttach(context: Context) {
         ViewModelProvider(this)
@@ -64,7 +69,27 @@ internal class HomeFragment : Fragment() {
                     result.e.printStackTrace()
                     Toast.makeText(requireContext(), result.e.toString(), Toast.LENGTH_LONG).show()
                 }
-                is MyResult.Success -> hotSaleAdapter.submitList(result.data)
+                is MyResult.Success -> {
+                    hotSaleAdapter.items = result.data
+                    hotSaleAdapter.notifyItemRangeChanged(0, result.data.size)
+                }
+            }
+        }
+        viewModel.bestSellersResult.observe(viewLifecycleOwner){
+            result ->
+            when(result){
+                is MyResult.Error -> {
+                    Toast.makeText(requireContext(), "${result.code} \n ${result.message}", Toast.LENGTH_LONG).show()
+                }
+                is MyResult.Exception -> {
+                    result.e.printStackTrace()
+                    Toast.makeText(requireContext(), result.e.toString(), Toast.LENGTH_LONG).show()
+                }
+                is MyResult.Success -> {
+                    bestSellerAdapter.items = result.data
+                    bestSellerAdapter.notifyItemRangeChanged(0, result.data.size)
+                    Toast.makeText(requireContext(), result.data.toString(), Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
@@ -77,6 +102,7 @@ internal class HomeFragment : Fragment() {
     }
 
 
+
     private fun navigateToDetails(id: Int){
         val link = getString(com.rkhvstnv.testecommerce.core.R.string.deep_link_details_base)
         val uri = Uri.parse(link + id)
@@ -84,14 +110,26 @@ internal class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerViews(){
-        categoryAdapter = CategoryAdapter(
-            requireContext(),
-            object : CategoryAdapterCallback{
-                override fun onClick(id: Int) {
-                    viewModel.requestCategoryById(id = id)
-                }
-
-            }
+        categoryAdapter = CategoryAdapter(requireContext(), viewModel::requestCategoryById)
+        hotSaleAdapter = HomeAdapterDelegator {}
+        bestSellerAdapter = HomeAdapterDelegator(this::navigateToDetails)
+        hotSaleAdapter.items = listOf(HotSale(
+            id =  -1,
+            is_buy = false,
+            is_new = false,
+            image = "",
+            title = "",
+            subtitle = ""
+        ))
+        bestSellerAdapter.items = listOf(
+            BestSeller(
+                id = -1,
+                is_favorites = false,
+                "",
+                "",
+                0,
+                0
+            )
         )
 
         binding.rvCategories.apply {
@@ -104,8 +142,17 @@ internal class HomeFragment : Fragment() {
             adapter = hotSaleAdapter
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
+
+        }
+        binding.rvBestSellers.apply {
+            adapter = bestSellerAdapter
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            setHasFixedSize(true)
         }
     }
+
+
+
 
     override fun onDestroyView() {
         _binding = null
