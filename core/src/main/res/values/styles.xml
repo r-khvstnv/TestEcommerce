@@ -9,6 +9,7 @@
 
     <style name="MyTopAppBarComponent.Button.Back">
         <item name="android:layout_width">@dimen/top_app_bar_button_height</item>
+        <item name="android:layout_height">@dimen/top_app_bar_button_height</item>
         <item name="android:backgroundTint">?attr/colorPrimary</item>
         <item name="tint">?attr/colorOnPrimary</item>
         <item name="android:layout_gravity">center_vertical|start</item>
@@ -17,6 +18,7 @@
     <style name="MyTopAppBarComponent.Button.Action">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:minWidth">@dimen/top_app_bar_button_height</item>
+        <item name="android:layout_height">@dimen/top_app_bar_button_height</item>
         <item name="backgroundTint">?attr/colorSecondary</item>
         <item name="tint">?attr/colorOnSecondary</item>
         <item name="android:textColor">?attr/colorOnSecondary</item>

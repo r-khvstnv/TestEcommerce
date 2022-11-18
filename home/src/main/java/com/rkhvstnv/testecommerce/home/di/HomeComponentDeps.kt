@@ -2,6 +2,8 @@ package com.rkhvstnv.testecommerce.home.di
 
 import androidx.annotation.RestrictTo
 import androidx.lifecycle.ViewModel
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetAllCategoriesUseCase
+import com.rkhvstnv.testecommerce.core_data.domain.usecase.GetHotSalesUseCase
 import kotlin.properties.Delegates
 
 /**
@@ -18,6 +20,8 @@ import kotlin.properties.Delegates
  * Note: Should be inherited in AppComponent
  * */
 interface HomeComponentDeps {
+    val getAllCategoriesUseCase: GetAllCategoriesUseCase
+    val getHotSalesUseCase: GetHotSalesUseCase
 }
 /**
  * Interface provides required instances from appComponent

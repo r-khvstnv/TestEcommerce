@@ -19,7 +19,6 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    @Inject lateinit var getHotSalesUseCase: GetHotSalesUseCase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as TestEcommerceApp).appComponent.inject(this)
@@ -27,13 +26,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        lifecycleScope.launch(Dispatchers.IO){
-            when(val result = getHotSalesUseCase.invoke()){
-                is MyResult.Success -> Log.i("RetrofitResponse", result.data.toString())
-                is MyResult.Error -> Log.i("RetrofitResponse", result.code.toString() + result.message)
-                is MyResult.Exception -> Log.i("RetrofitResponse", result.e.toString())
-            }
-        }
 
         /**NavigationView*/
         val navView: BottomNavigationView = binding.navView

@@ -1,11 +1,13 @@
 package com.rkhvstnv.testecommerce.core_data.data.utils
 
+import com.rkhvstnv.testecommerce.core_data.data.model.*
 import com.rkhvstnv.testecommerce.core_data.data.model.BestSeller
 import com.rkhvstnv.testecommerce.core_data.data.model.HomeStore
 import com.rkhvstnv.testecommerce.core_data.data.model.PhoneDto
 import com.rkhvstnv.testecommerce.core_data.data.model.Pojo
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
 import com.rkhvstnv.testecommerce.core_data.domain.model.BestSellerProduct
+import com.rkhvstnv.testecommerce.core_data.domain.model.Category
 import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
 import com.rkhvstnv.testecommerce.core_data.domain.model.Phone
 import com.rkhvstnv.testecommerce.utils.Mapper
@@ -109,6 +111,18 @@ internal class PhoneDtoResultToPhoneResultMapper: Mapper<MyResult<PhoneDto>, MyR
                 }
             }
         }
+    }
+
+}
+
+internal class CategoryDtoToCategoryMapper: Mapper<CategoryDto, Category>{
+    override fun map(input: CategoryDto): Category = with(input){
+        Category(
+            id = id,
+            name = name,
+            image = image,
+            isSelected = false
+        )
     }
 
 }

@@ -4,11 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.rkhvstnv.testecommerce.cart.databinding.ItemInCartBinding
+import com.rkhvstnv.testecommerce.core.ListAdapterCallBack
 import com.rkhvstnv.testecommerce.core_data.domain.model.ProductInCart
+import com.rkhvstnv.testecommerce.utils.GRAVITY_CENTER_INSIDE
 import com.rkhvstnv.testecommerce.utils.formatToTwoDecimals
 import com.rkhvstnv.testecommerce.utils.loadImage
 
@@ -28,7 +31,9 @@ internal class ProductsInCartAdapter(
         val productInCart = getItem(position)
 
         with(holder.binding){
-            ivItemInCartProductImage.loadImage(productInCart.image)
+            ivItemInCartProductImage.apply {
+                loadImage(productInCart.image, this.GRAVITY_CENTER_INSIDE)
+            }
             tvItemInCartProductName.text = productInCart.name
             tvItemInCartProductCost.text =
                 context.getString(com.rkhvstnv.testecommerce.utils.R.string.currency_us) +

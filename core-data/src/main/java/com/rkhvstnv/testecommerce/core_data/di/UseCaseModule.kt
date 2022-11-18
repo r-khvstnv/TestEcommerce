@@ -19,4 +19,6 @@ class UseCaseModule {
         GetAllProductsInCartUseCase(repository)
     @[Provides Singleton]
     fun providesUpdateCartUseCase(repository: Repository): UpdateCartUseCase = UpdateCartUseCase(repository)
+    @[Provides Singleton]
+    fun getAllCategoriesUseCase(repository: Repository): GetAllCategoriesUseCase = GetAllCategoriesUseCase(repository)
 }

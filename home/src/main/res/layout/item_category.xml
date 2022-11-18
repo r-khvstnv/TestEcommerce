@@ -6,9 +6,13 @@
     android:layout_marginVertical="@dimen/item_category_margin_vertical"
     android:layout_marginEnd="@dimen/item_category_margin_end"
     android:gravity="center_horizontal"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/custom_ripple"
     android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/iv_item_category_image"
         android:layout_width="@dimen/item_category_image_size"
         android:layout_height="@dimen/item_category_image_size"
         android:background="@drawable/shape_circle"
@@ -18,6 +22,7 @@
         tools:src="@drawable/ic_phone" />
 
     <TextView
+        android:id="@+id/tv_item_category_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/item_category_text_margin_top"

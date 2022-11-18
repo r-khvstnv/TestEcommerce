@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textSize="@dimen/filter_title_text_size"
+    app:fontFamily="@font/mark_pro_regular"
+    android:textColor="?attr/colorPrimary"
+    android:layout_marginVertical="@dimen/filter_title_text_margin_vertical"
+    android:layout_height="match_parent" />
+

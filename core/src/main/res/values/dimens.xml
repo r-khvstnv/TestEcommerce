@@ -2,7 +2,7 @@
 <resources>
     <dimen name="m_default_layout_margin">16dp</dimen>
 
-    <dimen name="top_app_bar_button_height">42dp</dimen>
+    <dimen name="top_app_bar_button_height">48dp</dimen>
     <dimen name="top_app_bar_button_text_size">18sp</dimen>
     <dimen name="top_app_bar_title_text_size">18sp</dimen>
     <dimen name="top_app_bar_subtitle_text_size">16sp</dimen>

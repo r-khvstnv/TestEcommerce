@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.rkhvstnv.testecommerce.details.databinding.ItemProductPreviewBinding
+import com.rkhvstnv.testecommerce.utils.GRAVITY_CENTER_INSIDE
 import com.rkhvstnv.testecommerce.utils.loadImage
 
 internal class ProductImageAdapter(
@@ -21,7 +22,9 @@ internal class ProductImageAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val imagePath = getItem(position)
-        holder.binding.itemProductImage.loadImage(imagePath)
+        holder.binding.itemProductImage.apply {
+            loadImage(imagePath, this.GRAVITY_CENTER_INSIDE)
+        }
     }
 
 }

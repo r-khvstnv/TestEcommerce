@@ -2,18 +2,17 @@ package com.rkhvstnv.testecommerce.core_data.data
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.rkhvstnv.testecommerce.core_data.data.model.CategoryDto
 import com.rkhvstnv.testecommerce.core_data.data.source.LocalSource
 import com.rkhvstnv.testecommerce.core_data.data.source.RemoteSource
+import com.rkhvstnv.testecommerce.core_data.data.utils.*
 import com.rkhvstnv.testecommerce.core_data.data.utils.PhoneDtoResultToPhoneResultMapper
 import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToBestSellerProductListResultMapper
 import com.rkhvstnv.testecommerce.core_data.data.utils.PojoNetworkResultToHotSaleListResultMapper
 import com.rkhvstnv.testecommerce.core_data.data.utils.handleApi
 import com.rkhvstnv.testecommerce.core_data.domain.MyResult
 import com.rkhvstnv.testecommerce.core_data.domain.Repository
-import com.rkhvstnv.testecommerce.core_data.domain.model.BestSellerProduct
-import com.rkhvstnv.testecommerce.core_data.domain.model.HotSale
-import com.rkhvstnv.testecommerce.core_data.domain.model.Phone
-import com.rkhvstnv.testecommerce.core_data.domain.model.ProductInCartDto
+import com.rkhvstnv.testecommerce.core_data.domain.model.*
 import javax.inject.Inject
 
 internal class RepositoryImpl @Inject constructor(
@@ -23,6 +22,7 @@ internal class RepositoryImpl @Inject constructor(
     private val pojoNetworkResultToHotSaleListResultMapper = PojoNetworkResultToHotSaleListResultMapper()
     private val pojoNetworkResultToBestSellerProductListResultMapper = PojoNetworkResultToBestSellerProductListResultMapper()
     private val phoneDtoResultToPhoneResultMapper = PhoneDtoResultToPhoneResultMapper()
+    private val categoryDtoToCategoryMapper = CategoryDtoToCategoryMapper()
 
     override suspend fun getHotSales(): MyResult<List<HotSale>> = handleApi {
         remoteSource.getPojo() }.let(pojoNetworkResultToHotSaleListResultMapper::map)
@@ -46,5 +46,9 @@ internal class RepositoryImpl @Inject constructor(
 
     override fun insertAllProductsInCart(list: List<ProductInCartDto>) {
         localSource.insertAllProductInCart(json = Gson().toJson(list))
+    }
+
+    override fun getAllCategories(): List<Category> = localSource.getAllCategories().map {
+        categoryDtoToCategoryMapper.map(input = it)
     }
 }
